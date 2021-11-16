@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class IMC {
 
@@ -60,24 +60,37 @@ public class IMC {
     System.out.println("0. Sair");
   }
 
-  public void cadastrarPessoa() {
-    Scanner input = new Scanner(System.in);
-
-    System.out.println("Qual é o nome da pessoa? ");
-    setNome(input.nextLine());
-
-    input.nextLine();
-
-    System.out.println("Qual é a altura da pessoa? ");
-    setAltura(input.nextDouble());
-
-    System.out.println("Qual é o peso da pessoa? ");
-    setPeso(input.nextDouble());
-
-    System.out.println("Pessoa cadastrada com sucesso!");
-  }
-
   public double calcIMC() {
     return getPeso() / (getAltura() * getAltura());
+  }
+
+  public void abaixoDoPeso(ArrayList<IMC> array) {
+    for (int i = 0; i < array.size(); i++) {
+      if (array.get(i).calcIMC() < 18.5) {
+        System.out.println(
+          "A pessoa " + array.get(i).getNome() + " está abaixo do peso"
+        );
+      }
+    }
+  }
+
+  public void dentroDoPesoIdeal(ArrayList<IMC> array) {
+    for (int i = 0; i < array.size(); i++) {
+      if (array.get(i).calcIMC() > 18.5 && array.get(i).calcIMC() < 25) {
+        System.out.println(
+          "A pessoa " + array.get(i).getNome() + " está dentro do peso ideal"
+        );
+      }
+    }
+  }
+
+  public void acimaDoPeso(ArrayList<IMC> array) {
+    for (int i = 0; i < array.size(); i++) {
+      if (array.get(i).calcIMC() >= 25) {
+        System.out.println(
+          "A pessoa " + array.get(i).getNome() + " está acima do peso"
+        );
+      }
+    }
   }
 }

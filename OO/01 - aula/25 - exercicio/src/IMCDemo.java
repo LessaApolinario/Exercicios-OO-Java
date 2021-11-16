@@ -1,62 +1,57 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class IMCDemo {
 
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    IMC[] imc = new IMC[5]; // Array de objetos
-
-    // Inicializando os objetos
-    for (int i = 0; i < imc.length; i++) {
-      imc[i] = new IMC(1, 1, "");
-    }
-
-    double[] pesos = new double[5];
-    double[] alturas = new double[5];
-    String[] nomes = new String[5];
+    IMC imc = new IMC(1, 1, "");
+    ArrayList<IMC> lista = new ArrayList<IMC>();
 
     int op = -1;
 
-    for (int i = 0; i < imc.length || op != 0; i++) {
-      imc[i].menu();
+    do {
+      imc.menu();
       System.out.println("Escolha uma opção: ");
       op = input.nextInt();
+      limparBuffer(input);
 
       switch (op) {
         case 1:
+          System.out.println("Qual é o nome da pessoa? ");
+          String nome = input.nextLine();
+
+          System.out.println("Qual é a altura da pessoa? ");
+          double altura = input.nextDouble();
+
+          System.out.println("Qual é o peso da pessoa? ");
+          double peso = input.nextDouble();
+
+          imc = new IMC(peso, altura, nome);
+
+          lista.add(imc);
+
+          System.out.println("Pessoa cadastrada com sucesso!");
           break;
         case 2:
-          for (int j = 0; j < imc.length; j++) {
-            if (imc[j].calcIMC() < 18.5) {
-              System.out.println(
-                "A pessoa " + imc[j].getNome() + " está abaixo do peso"
-              );
-            }
-          }
+          imc.abaixoDoPeso(lista);
           break;
         case 3:
-          for (int k = 0; k < imc.length; k++) {
-            if (imc[k].calcIMC() > 18.5 && imc[k].calcIMC() < 25) {
-              System.out.println(
-                "A pessoa " + imc[k].getNome() + " está dentro do peso ideal"
-              );
-            }
-          }
+          imc.dentroDoPesoIdeal(lista);
           break;
         case 4:
-          for (int l = 0; l < imc.length; l++) {
-            if (imc[l].calcIMC() >= 25) {
-              System.out.println(
-                "A pessoa " + imc[l].getNome() + " está acima do peso"
-              );
-            }
-          }
+          imc.acimaDoPeso(lista);
           break;
         case 0:
           System.out.println("Você saiu!");
-          input.close();
           break;
       }
+    } while (op != 0);
+  }
+
+  public static void limparBuffer(Scanner sc) {
+    if (sc.hasNextLine()) {
+      sc.nextLine();
     }
   }
 }

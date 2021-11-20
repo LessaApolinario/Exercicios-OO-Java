@@ -78,7 +78,7 @@ public class Estudante {
     return nota2;
   }
 
-  public void cadastrarEstudante(Estudante[] estudanteArray, int posicao) {
+  public void cadastrarEstudante() {
     Scanner input = new Scanner(System.in);
 
     System.out.println("Digite o nome do aluno: ");
@@ -96,11 +96,6 @@ public class Estudante {
 
     System.err.println("Digite a segunda nota: ");
     setNota2(input.nextDouble());
-
-    estudanteArray[posicao] =
-      new Estudante(nome, numMatricula, endereco, nota1, nota2);
-
-    System.out.println("Estudante cadastrado com sucesso!");
   }
 
   public double mediaEstudante() {
@@ -117,28 +112,91 @@ public class Estudante {
     return (double) total / (numAlunos * estudanteArray.length);
   }
 
-  /**
-   * Método para debugar,
-   * será deletado assim que
-   * o exercício tenha sido concluído!
-   */
-  public void display(Estudante[] estudanteArray, int posicao) {
-    System.err.println(
-      "Nome: " +
-      estudanteArray[posicao].getNome() +
-      "\n" +
-      "Número: " +
-      estudanteArray[posicao].getNumMatricula() +
-      "\n" +
-      "Endereço: " +
-      estudanteArray[posicao].getEndereco() +
-      "\n" +
-      "Nota 1: " +
-      estudanteArray[posicao].getNota1() +
-      "\n" +
-      "Nota 2: " +
-      estudanteArray[posicao].getNota2()
-    );
+  public void reprovados(Estudante[] array) {
+    for (int i = 0; i < array.length; i++) {
+      if (array[i].mediaEstudante() < 7) {
+        System.out.println(
+          "O aluno " +
+          array[i].getNome() +
+          " está reprovado com média igual a " +
+          array[i].mediaEstudante()
+        );
+      }
+    }
+  }
+
+  public void menu() {
+    System.out.println("1. Cadastrar um estudante");
+    System.out.println("2. Calcular média de um estudante");
+    System.out.println("3. Consultar matricula de um estudante");
+    System.out.println("4. Consultar endereço de um estudante");
+    System.out.println("5. Calcular a média da turma");
+    System.out.println("6. Exibir os nomes dos estudantes reprovados");
+    System.out.println("0. Sair");
+  }
+
+  public void consultarMediaEstudante(Estudante[] array, String nomeDigitado) {
+    for (int i = 0; i < array.length; i++) {
+      if (array[i].getNome().equals(nomeDigitado)) {
+        System.out.println(
+          "A média do estudante " +
+          array[i].getNome() +
+          " é " +
+          array[i].mediaEstudante()
+        );
+      }
+    }
+  }
+
+  public void consutraMatriculaEstudante(
+    Estudante[] array,
+    int numeroDaMatricula
+  ) {
+    int inicio = 0;
+    int meio = 0;
+    int fim = array.length - 1;
+
+    while (inicio <= fim) {
+      meio = (fim + inicio) / 2;
+
+      if (array[meio].getNumMatricula() == numeroDaMatricula) {
+        System.out.println(
+          "A matrícula do aluno " +
+          array[meio].getNome() +
+          " é " +
+          array[meio].getNumMatricula()
+        );
+        break;
+      }
+
+      if (array[meio].getNumMatricula() < numeroDaMatricula) {
+        inicio = meio + 1;
+      } else {
+        fim = meio - 1;
+      }
+
+      if (inicio > fim) {
+        System.out.println(
+          "A matrícula " + numeroDaMatricula + " não foi encontrada!"
+        );
+      }
+    }
+  }
+
+  public void consultarEnderecoEstudante(
+    Estudante[] array,
+    String enderecoDigitado
+  ) {
+    for (int i = 0; i < array.length; i++) {
+      if (array[i].getEndereco().equals(enderecoDigitado)) {
+        System.out.println(
+          "O endereço do aluno " +
+          array[i].getNome() +
+          " é " +
+          array[i].getEndereco()
+        );
+      }
+    }
   }
 
   public static void limparBuffer(Scanner sc) {

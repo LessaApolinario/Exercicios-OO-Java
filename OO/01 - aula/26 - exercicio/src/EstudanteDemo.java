@@ -3,18 +3,20 @@ import java.util.Scanner;
 public class EstudanteDemo {
 
   public static void main(String[] args) {
-    Estudante estudante = new Estudante("", 0, "", 0, 0);
+    Estudante estudante = new Estudante("", 1, "", 0, 0);
     Estudante[] estudantes = new Estudante[2];
     Scanner input = new Scanner(System.in);
 
     // Inicializando o array de objetos pelo constructor
-    estudantes[0] = new Estudante("", 2, "", 7, 8);
-    estudantes[1] = new Estudante("", 3, "", 8, 9);
+    estudantes[0] = new Estudante("", 1, "", 0, 0);
+    estudantes[1] = new Estudante("", 1, "", 0, 0);
     int op = -1;
+    int i = 0;
 
-    for (int i = 0; op != 0; i++) {
+    do {
       estudante.menu();
       op = input.nextInt();
+      limparBuffer(input);
 
       switch (op) {
         case 1:
@@ -52,7 +54,7 @@ public class EstudanteDemo {
           }
 
           System.out.println("Estudante cadastrado com sucesso!");
-
+          i++;
           break;
         case 2:
           System.out.println("Digite o nome do estudante: ");
@@ -60,10 +62,28 @@ public class EstudanteDemo {
           estudante.consultarMediaEstudante(estudantes, nomeDoEstudante);
           break;
         case 3:
-          // Continuar
+          System.out.println("Digite o nome do estudante: ");
+          nomeDoEstudante = input.nextLine();
+          estudante.consutraMatriculaEstudante(estudantes, nomeDoEstudante);
+          break;
+        case 4:
+          System.out.println("Digite o nome do estudante: ");
+          nomeDoEstudante = input.nextLine();
+          estudante.consultarEnderecoEstudante(estudantes, nomeDoEstudante);
+          break;
+        case 5:
+          System.out.println(
+            "A média da turma é == " + estudante.mediaDaTurma(estudantes, i)
+          );
+          break;
+        case 6:
+          estudante.reprovados(estudantes);
+          break;
+        case 0:
+          System.out.println("Você saiu!");
           break;
       }
-    }
+    } while (op != 0);
   }
 
   public static void limparBuffer(Scanner sc) {

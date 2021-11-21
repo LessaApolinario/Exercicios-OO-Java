@@ -60,18 +60,5 @@ public class Conta {
     System.out.println("Digite o saldo do cliente: ");
     saldo = input.nextDouble();
     setSaldo(saldo);
-
-    // try {
-    //   array[pos] = new Conta(nome, numeroConta, saldo);
-    // } catch (ArrayIndexOutOfBoundsException exception) {
-    //   Conta[] newArray = new Conta[array.length + 1];
-
-    //   System.arraycopy(array, 0, newArray, 0, array.length);
-
-    //   array = newArray;
-    //   array[pos] = new Conta(nome, numeroConta, saldo);
-    // } finally {
-    //   System.out.println("Cliente cadastrado com sucesso!");
-    // }
   }
 }

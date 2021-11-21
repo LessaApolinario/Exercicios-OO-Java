@@ -1,4 +1,7 @@
+import java.util.Scanner;
+
 public class Conta {
+
   private String nome;
   private int numeroConta;
   private double saldo;
@@ -41,5 +44,34 @@ public class Conta {
 
   public double getSaldo() {
     return saldo;
+  }
+
+  public void cadastrarCliente() {
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Digite o nome do cliente: ");
+    nome = input.nextLine();
+    setNome(nome);
+
+    System.out.println("Digite o número da conta: ");
+    numeroConta = input.nextInt();
+    setNumeroConta(numeroConta);
+
+    System.out.println("Digite o saldo do cliente: ");
+    saldo = input.nextDouble();
+    setSaldo(saldo);
+
+    // try {
+    //   array[pos] = new Conta(nome, numeroConta, saldo);
+    // } catch (ArrayIndexOutOfBoundsException exception) {
+    //   Conta[] newArray = new Conta[array.length + 1];
+
+    //   System.arraycopy(array, 0, newArray, 0, array.length);
+
+    //   array = newArray;
+    //   array[pos] = new Conta(nome, numeroConta, saldo);
+    // } finally {
+    //   System.out.println("Cliente cadastrado com sucesso!");
+    // }
   }
 }

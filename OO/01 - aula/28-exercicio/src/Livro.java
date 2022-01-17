@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Livro {
 
   private String autor;
@@ -69,5 +72,36 @@ public class Livro {
 
   public int getAnoEdicao() {
     return this.anoEdicao;
+  }
+
+  public void cadastrarLivro(ArrayList<Livro> livros) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Qual é o nome do autor? ");
+    setAutor(input.nextLine());
+
+    System.out.println("Qual é o nome da editora? ");
+    setEditora(input.nextLine());
+
+    System.out.println("Qual é o ISBN? ");
+    setISBN(input.nextLine());
+
+    System.out.println("Qual é o nome do título? ");
+    setTitulo(input.nextLine());
+
+    System.out.println("Qual é o ano de edição? ");
+    setAnoEdicao(input.nextInt());
+
+    Livro l = new Livro(
+      getAutor(),
+      getEditora(),
+      getISBN(),
+      getTitulo(),
+      getAnoEdicao()
+    );
+
+    livros.add(l);
+
+    System.out.println("Livro cadastrado com sucesso!");
   }
 }

@@ -31,7 +31,7 @@ public class Livro {
     this.autor = autor;
   }
 
-  public String getAltor() {
+  public String getAutor() {
     return this.autor;
   }
 

@@ -35,7 +35,7 @@ public class Livro {
   }
 
   public String getAutor() {
-    return this.autor;
+    return autor;
   }
 
   public void setEditora(String editora) {
@@ -43,7 +43,7 @@ public class Livro {
   }
 
   public String getEditora() {
-    return this.editora;
+    return editora;
   }
 
   public void setISBN(String ISBN) {
@@ -53,7 +53,7 @@ public class Livro {
   }
 
   public String getISBN() {
-    return this.ISBN;
+    return ISBN;
   }
 
   public void setTitulo(String titulo) {
@@ -61,7 +61,7 @@ public class Livro {
   }
 
   public String getTitulo() {
-    return this.titulo;
+    return titulo;
   }
 
   public void setAnoEdicao(int anoEdicao) {
@@ -71,7 +71,7 @@ public class Livro {
   }
 
   public int getAnoEdicao() {
-    return this.anoEdicao;
+    return anoEdicao;
   }
 
   public void cadastrarLivro(ArrayList<Livro> livros) {
@@ -103,5 +103,15 @@ public class Livro {
     livros.add(l);
 
     System.out.println("Livro cadastrado com sucesso!");
+  }
+
+  public static void menu() {
+    System.out.println("1. Cadastrar livro");
+    System.out.println("2. Buscar livro por título");
+    System.out.println(
+      "3. Listar livros por autor (mostrar os livros de um autor)"
+    );
+    System.out.println("4. Listar todos os livros disponíveis");
+    System.out.println("0. Sair");
   }
 }

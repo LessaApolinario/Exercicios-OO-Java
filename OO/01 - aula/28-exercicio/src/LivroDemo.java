@@ -21,6 +21,11 @@ public class LivroDemo {
           System.out.println("Bem-vindo(a) ao cadastro de livros");
           livro.cadastrarLivro(livros);
           break;
+        case 2:
+          System.out.println("Escolha o título a procurar: ");
+          String tituloProcurado = input.nextLine();
+          System.out.println(livro.buscarLivro(livros, tituloProcurado));
+          break;
       }
     } while (op != 0);
   }

@@ -105,6 +105,17 @@ public class Livro {
     System.out.println("Livro cadastrado com sucesso!");
   }
 
+  public String buscarLivro(ArrayList<Livro> livros, String titulo) {
+    for (int i = 0; i < livros.size(); i++) {
+      if (titulo.equals(livros.get(i).getAutor())) {
+        String livroEncontrado = livros.get(i).getTitulo();
+        return "O livro " + livroEncontrado + " foi encontrado.";
+      }
+    }
+
+    return "O livro " + titulo + " não existe.";
+  }
+
   public static void menu() {
     System.out.println("1. Cadastrar livro");
     System.out.println("2. Buscar livro por título");

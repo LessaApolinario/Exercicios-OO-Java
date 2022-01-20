@@ -107,7 +107,7 @@ public class Livro {
 
   public String buscarLivro(ArrayList<Livro> livros, String titulo) {
     for (int i = 0; i < livros.size(); i++) {
-      if (titulo.equals(livros.get(i).getAutor())) {
+      if (titulo.equals(livros.get(i).getTitulo())) {
         String livroEncontrado = livros.get(i).getTitulo();
         return "O livro " + livroEncontrado + " foi encontrado.";
       }

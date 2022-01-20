@@ -117,6 +117,7 @@ public class Livro {
   }
 
   public static void menu() {
+    System.out.println("\n--------------------");
     System.out.println("1. Cadastrar livro");
     System.out.println("2. Buscar livro por título");
     System.out.println(
@@ -124,5 +125,6 @@ public class Livro {
     );
     System.out.println("4. Listar todos os livros disponíveis");
     System.out.println("0. Sair");
+    System.out.println("--------------------\n");
   }
 }

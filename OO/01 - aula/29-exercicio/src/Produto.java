@@ -19,7 +19,7 @@ public class Produto {
       this.preco = preco;
     }
 
-    if (quantidade > 0) {
+    if (quantidade >= 0) {
       this.quantidade = quantidade;
     }
   }

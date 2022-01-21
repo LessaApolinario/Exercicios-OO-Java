@@ -108,7 +108,6 @@ public class Produto {
     }
   }
 
-  // TODO efetuarVenda
   public String efetuarVenda(
     ArrayList<Produto> produtos,
     String produtoProcurado,

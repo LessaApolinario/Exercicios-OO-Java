@@ -25,6 +25,10 @@ public class ProdutoDemo {
           String produtoProcurado = input.nextLine();
 
           System.out.println(produto.buscarProduto(produtos, produtoProcurado));
+          break;
+        case 3:
+          produto.listarProdutos(produtos);
+          break;
       }
     } while (op != 0);
   }

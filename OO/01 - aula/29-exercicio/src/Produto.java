@@ -1,3 +1,4 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -100,9 +101,34 @@ public class Produto {
     return "O produto " + nome + " não existe no estoque!";
   }
 
-  // TODO listarProdutos
+  public void listarProdutos(ArrayList<Produto> produtos) {
+    for (Produto p : produtos) {
+      System.out.println(p.toString());
+    }
+  }
 
   // TODO efetuarVenda
+
+  @Override
+  public String toString() {
+    return (
+      "\n--------------------\n" +
+      "Informações do produto: " +
+      "\n" +
+      "Nome: " +
+      getNome() +
+      "\n" +
+      "Código: " +
+      getCodigo() +
+      "\n" +
+      "Preço: " +
+      getPreco() +
+      "\n" +
+      "Quantidade: " +
+      getQuantidade() +
+      "\n--------------------\n"
+    );
+  }
 
   public static void menu() {
     System.out.println("\n--------------------");

@@ -48,6 +48,11 @@ public class LivroDemo {
               "O autor " + autorProcurado + " não possui livros!"
             );
           }
+          break;
+        case 4:
+          // TODO listar todos os livros disponíveis
+          System.out.println("oi");
+          break;
       }
     } while (op != 0);
   }

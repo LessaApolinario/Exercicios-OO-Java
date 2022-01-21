@@ -116,7 +116,10 @@ public class Livro {
     return "O livro " + titulo + " não existe.";
   }
 
-  public ArrayList<String> buscarLivroAutor(ArrayList<Livro> livros, String autor) {
+  public ArrayList<String> buscarLivroAutor(
+    ArrayList<Livro> livros,
+    String autor
+  ) {
     ArrayList<String> titulos = new ArrayList<String>();
 
     for (int i = 0; i < livros.size(); i++) {

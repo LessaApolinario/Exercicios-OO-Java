@@ -89,6 +89,21 @@ public class Produto {
     System.out.println("Produto cadastrado com sucesso!");
   }
 
+  public String buscarProduto(ArrayList<Produto> produtos, String nome) {
+    for (Produto p : produtos) {
+      if (nome.equals(p.getNome())) {
+        String produtoEncontrado = p.getNome();
+        return "O produto " + produtoEncontrado + " existe no estoque.";
+      }
+    }
+
+    return "O produto " + nome + " não existe no estoque!";
+  }
+
+  // TODO listarProdutos
+
+  // TODO efetuarVenda
+
   public static void menu() {
     System.out.println("\n--------------------");
     System.out.println("1. Cadastrar produto");

@@ -20,6 +20,11 @@ public class ProdutoDemo {
         case 1:
           produto.cadastrarProduto(produtos);
           break;
+        case 2:
+          System.out.println("Qual o produto procurado? ");
+          String produtoProcurado = input.nextLine();
+
+          System.out.println(produto.buscarProduto(produtos, produtoProcurado));
       }
     } while (op != 0);
   }

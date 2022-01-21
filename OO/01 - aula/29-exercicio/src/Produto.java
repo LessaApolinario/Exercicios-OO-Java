@@ -90,15 +90,17 @@ public class Produto {
     System.out.println("Produto cadastrado com sucesso!");
   }
 
-  public String buscarProduto(ArrayList<Produto> produtos, String nome) {
+  public boolean buscarProduto(ArrayList<Produto> produtos, String nome) {
     for (Produto p : produtos) {
       if (nome.equals(p.getNome())) {
         String produtoEncontrado = p.getNome();
-        return "O produto " + produtoEncontrado + " existe no estoque.";
+        // Se o produto for encontrado!
+        return true;
       }
     }
 
-    return "O produto " + nome + " não existe no estoque!";
+    // Se o produto não for encontrado!
+    return false;
   }
 
   public void listarProdutos(ArrayList<Produto> produtos) {
@@ -108,6 +110,31 @@ public class Produto {
   }
 
   // TODO efetuarVenda
+  // public int efetuarVenda(
+  //   ArrayList<Produto> produtos,
+  //   String produtoProcurado,
+  //   int quantidadeDesejada
+  // ) {
+  //   /**
+  //    * retorna true se o produto estiver cadastrado ou retorna false caso contrário!
+  //    * */
+  //   boolean existeNoEstoque = buscarProduto(produtos, produtoProcurado)
+  //     .equals("O produto " + produtoProcurado + " existe no estoque.");
+
+  //   for (Produto p : produtos) {
+  //     if (existeNoEstoque) {
+  //       boolean possuiEstoqueProduto = quantidadeDesejada <= p.getQuantidade();
+
+  //       if (possuiEstoqueProduto) {
+  //         int estoqueAtual = p.getQuantidade();
+  //         return estoqueAtual -= quantidadeDesejada;
+  //       }
+  //     }
+  //   }
+
+  //   // Caso a venda não possa ser realizada por falta de estoque!
+  //   return 0;
+  // }
 
   @Override
   public String toString() {

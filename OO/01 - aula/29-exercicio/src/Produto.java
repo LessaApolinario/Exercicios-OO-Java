@@ -58,4 +58,14 @@ public class Produto {
   public int getQuantidade() {
     return quantidade;
   }
+
+  public static void menu() {
+    System.out.println("\n--------------------");
+    System.out.println("1. Cadastrar produto");
+    System.out.println("2. Buscar produto (procurar produto pelo nome)");
+    System.out.println("3. Listar todos os produtos disponíveis");
+    System.out.println("4. Efetuar a venda de um produto");
+    System.out.println("0. Sair");
+    System.out.println("--------------------\n");
+  }
 }

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Produto {
 
   private String nome;
@@ -57,6 +60,33 @@ public class Produto {
 
   public int getQuantidade() {
     return quantidade;
+  }
+
+  public void cadastrarProduto(ArrayList<Produto> produtos) {
+    Scanner input = new Scanner(System.in);
+
+    System.out.println("Qual é o nome do produto? ");
+    setNome(input.nextLine());
+
+    System.out.println("Qual é o código do produto? ");
+    setCodigo(input.nextInt());
+
+    System.out.println("Qual é o preço do produto? ");
+    setPreco(input.nextDouble());
+
+    System.out.println("Qual é a quantidade do produto? ");
+    setQuantidade(input.nextInt());
+
+    Produto p = new Produto(
+      getNome(),
+      getCodigo(),
+      getPreco(),
+      getQuantidade()
+    );
+
+    produtos.add(p);
+
+    System.out.println("Produto cadastrado com sucesso!");
   }
 
   public static void menu() {

@@ -132,6 +132,12 @@ public class Livro {
     return titulos;
   }
 
+  public void listarLivrosDisponiveis(ArrayList<Livro> livros) {
+    for (Livro l : livros) {
+      System.out.println(l.toString());
+    }
+  }
+
   public static void menu() {
     System.out.println("\n--------------------");
     System.out.println("1. Cadastrar livro");
@@ -142,5 +148,29 @@ public class Livro {
     System.out.println("4. Listar todos os livros disponíveis");
     System.out.println("0. Sair");
     System.out.println("--------------------\n");
+  }
+
+  @Override
+  public String toString() {
+    return (
+      "\n--------------------\n" +
+      "Informações do livro:" +
+      "\n" +
+      "Autor: " +
+      getAutor() +
+      "\n" +
+      "Editora: " +
+      getEditora() +
+      "\n" +
+      "ISBN: " +
+      getISBN() +
+      "\n" +
+      "Título: " +
+      getTitulo() +
+      "\n" +
+      "Ano de edição: " +
+      getAnoEdicao() +
+      "\n--------------------\n"
+    );
   }
 }

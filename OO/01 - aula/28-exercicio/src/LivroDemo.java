@@ -50,8 +50,10 @@ public class LivroDemo {
           }
           break;
         case 4:
-          // TODO listar todos os livros disponíveis
-          System.out.println("oi");
+          livro.listarLivrosDisponiveis(livros);
+          break;
+        case 0:
+          System.out.println("Obrigado pela preferência, volte sempre!");
           break;
       }
     } while (op != 0);

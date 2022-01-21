@@ -35,6 +35,7 @@ public class LivroDemo {
             autorProcurado
           );
 
+          // Se a lista não estiver vazia, o autor possui livros
           if (!titulosEncontrados.isEmpty()) {
             System.out.println(
               "Os livros do autor " + autorProcurado + " são: "

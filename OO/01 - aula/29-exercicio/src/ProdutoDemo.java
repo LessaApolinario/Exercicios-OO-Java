@@ -46,34 +46,33 @@ public class ProdutoDemo {
           System.out.println("Qual o produto procurado? ");
           String produtoDesejado = input.nextLine();
 
-          System.out.println("Qual a quantidade desejada do produto? ");
-          int quantidadeDesejada = input.nextInt();
-
-          int realizarVenda = produto.efetuarVenda(
+          /**
+           * retorna true se o produto estiver cadastrado ou retorna false caso contrário!
+           * */
+          boolean existeNoEstoque = produto.buscarProduto(
             produtos,
-            produtoDesejado,
-            quantidadeDesejada
+            produtoDesejado
           );
 
-          if (realizarVenda > 0) {
-            System.out.println(
-              "O produto " + produtoDesejado + "foi vendido com sucesso!"
+          if (existeNoEstoque) {
+            System.out.println("Qual a quantidade desejada do produto? ");
+            int quantidadeDesejada = input.nextInt();
+
+            String realizarVenda = produto.efetuarVenda(
+              produtos,
+              produtoDesejado,
+              quantidadeDesejada
             );
-            System.out.println(
-              "O novo estoque para o produto" +
-              produtoDesejado +
-              " é = " +
-              realizarVenda
-            );
+
+            System.out.println(realizarVenda);
           } else {
-            System.out.println("Quantidade indisponível");
             System.out.println(
-              "O estoque atual para o produto " +
-              produtoDesejado +
-              " é = " +
-              realizarVenda
+              "O produto " + produtoDesejado + " não existe no estoque!"
             );
           }
+          break;
+        case 0:
+          System.out.println("Obrigado pela preferência, volte sempre!");
           break;
       }
     } while (op != 0);

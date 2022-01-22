@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class GerenciadorDeProdutos {
-    
+
     private ArrayList<Produto> produtos;
 
     public GerenciadorDeProdutos() {

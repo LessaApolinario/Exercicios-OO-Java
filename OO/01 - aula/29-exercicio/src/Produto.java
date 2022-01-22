@@ -61,8 +61,6 @@ public class Produto {
 
     public int diminuirQuantidade(int estoque, int quantidadeDesejada) {
         estoque -= quantidadeDesejada;
-        setQuantidade(estoque);
-
         return estoque;
     }
 

@@ -7,9 +7,6 @@ public class GerenciadorDeProdutos {
         produtos = new ArrayList<>();
     }
 
-    /// TODO: fix efetuarVenda
-    /// BUG: não diminui a quantidade
-    /// FIXME: debugar esse método e o método diminuirQuantidade
     public String efetuarVenda(String produtoProcurado, int quantidadeDesejada) {
         Produto produto = buscarProduto(produtoProcurado);
 
@@ -24,12 +21,13 @@ public class GerenciadorDeProdutos {
 
         if (possuiEstoqueProduto) {
             // Atualiza o valor do estoqueAtual!
-            produto.diminuirQuantidade(estoqueAtual, quantidadeDesejada);
+            int novoEstoque = produto.diminuirQuantidade(estoqueAtual, quantidadeDesejada);
+            produto.setQuantidade(novoEstoque);
 
             System.out.println("O produto " + produtoProcurado + " foi vendido com sucesso!");
 
             // Caso a venda seja realizada com sucesso!
-            return "Estoque atual: " + estoqueAtual;
+            return "Estoque atual: " + produto.getQuantidade();
         }
 
         // Caso a venda não possa ser realizada por falta de estoque!

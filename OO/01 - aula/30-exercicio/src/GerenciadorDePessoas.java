@@ -35,38 +35,36 @@ public class GerenciadorDePessoas {
     }
 
     // Primeiro temos que buscar o aluno, para só então exibir as suas informações!
-    public String buscarAluno(String cpf) {
+    public Aluno buscarAluno(String cpf) {
         for (Aluno aluno : alunos) {
             if (cpf.equals(aluno.getCpf())) {
-                String alunoEncontrado = aluno.getCpf();
-                return alunoEncontrado;
+                return aluno;
             }
         }
 
-        return "O aluno não foi encontrado!";
+        return null;
     }
 
     // Exibindo as informações dos alunos
     public void obterInformacoesAluno(Aluno aluno) {
-        String alunoProcurado = buscarAluno(aluno.getCpf());
+        Aluno alunoProcurado = buscarAluno(aluno.getCpf());
 
         System.out.println(alunoProcurado.toString());
     }
 
     // Buscando o professor
-    public String buscarProfessor(String cpf) {
+    public Professor buscarProfessor(String cpf) {
         for (Professor professor : professores) {
             if (cpf.equals(professor.getCpf())) {
-                String professorEncontrado = professor.getCpf();
-                return professorEncontrado;
+                return professor;
             }
         }
 
-        return "O professor não foi encontrado!";
+        return null;
     }
 
     public void obterInformacoesProfessor(Professor professor) {
-        String professorProcurado = buscarProfessor(professor.getCpf());
+        Professor professorProcurado = buscarProfessor(professor.getCpf());
 
         System.out.println(professorProcurado.toString());
     }

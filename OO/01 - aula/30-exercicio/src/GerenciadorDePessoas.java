@@ -20,18 +20,18 @@ public class GerenciadorDePessoas {
     }
 
     // Cadastrando um aluno, observe que usamos também os atributos de pessoa
-    public Aluno cadastrarAluno(String nome, String cpf, String dataNascimento, double nota1, double nota2,
+    public void cadastrarAluno(String nome, String cpf, String dataNascimento, double nota1, double nota2,
             double nota3, double nota4) {
         Aluno aluno = new Aluno(nome, cpf, dataNascimento, nota1, nota2, nota3, nota4);
 
-        return aluno;
+        alunos.add(aluno);
     }
 
     // Cadastrando um professor
-    public Professor cadastrarProfessor(String nome, String cpf, String dataNascimento, double salario) {
+    public void cadastrarProfessor(String nome, String cpf, String dataNascimento, double salario) {
         Professor professor = new Professor(nome, cpf, dataNascimento, salario);
 
-        return professor;
+        professores.add(professor);
     }
 
     // Primeiro temos que buscar o aluno, para só então exibir as suas informações!

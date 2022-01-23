@@ -2,7 +2,6 @@ public class Pessoa {
 
     private String nome;
     private String cpf;
-    private String dataNascimento;
 
     public Pessoa(String nome, String cpf, String dataNascimento) {
         if (!nome.equals("")) {
@@ -11,10 +10,6 @@ public class Pessoa {
 
         if (!cpf.equals("") && cpf.length() == 14) {
             this.cpf = cpf;
-        }
-
-        if (!dataNascimento.equals("")) {
-            this.dataNascimento = dataNascimento;
         }
     }
 
@@ -35,16 +30,6 @@ public class Pessoa {
     public void setCpf(String cpf) {
         if (!cpf.equals("") && cpf.length() == 14) {
             this.cpf = cpf;
-        }
-    }
-
-    public String getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(String dataNascimento) {
-        if (!dataNascimento.equals("")) {
-            this.dataNascimento = dataNascimento;
         }
     }
 }

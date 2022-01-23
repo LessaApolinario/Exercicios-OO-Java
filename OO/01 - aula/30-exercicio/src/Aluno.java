@@ -65,4 +65,12 @@ public class Aluno extends Pessoa {
             this.nota4 = nota4;
         }
     }
+
+    @Override
+    public String toString() {
+        return "\n--------------------\n" + "Informações do aluno:\n" + "Nome: " + getNome() + "\n" + "CPF: " + getCpf()
+                + "\n" + "Data de nascimento: " + getDataNascimento() + "\n" + "Nota 1: " + getNota1() + "\n"
+                + "Nota 2: " + getNota2() + "\n" + "Nota 3: " + getNota3() + "\n" + "Nota 4: " + getNota4()
+                + "\n--------------------\n";
+    }
 }

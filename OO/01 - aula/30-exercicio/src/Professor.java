@@ -26,4 +26,11 @@ public class Professor extends Pessoa {
 
         return "A média do aluno " + aluno.getNome() + " é: " + mediaAluno;
     }
+
+    @Override
+    public String toString() {
+        return "\n--------------------\n" + "Informações do aluno:\n" + "Nome: " + getNome() + "\n" + "CPF: " + getCpf()
+                + "\n" + "Data de nascimento: " + getDataNascimento() + "\n" + "Salário: " + getSalario()
+                + "\n--------------------\n";
+    }
 }

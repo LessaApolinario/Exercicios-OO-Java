@@ -25,6 +25,8 @@ public class GerenciadorDePessoas {
         Aluno aluno = new Aluno(nome, cpf, dataNascimento, nota1, nota2, nota3, nota4);
 
         alunos.add(aluno);
+
+        System.out.println("Aluno cadastrado com sucesso!");
     }
 
     // Cadastrando um professor
@@ -32,6 +34,8 @@ public class GerenciadorDePessoas {
         Professor professor = new Professor(nome, cpf, dataNascimento, salario);
 
         professores.add(professor);
+
+        System.out.println("Professor cadastrado com sucesso!");
     }
 
     // Primeiro temos que buscar o aluno, para só então exibir as suas informações!

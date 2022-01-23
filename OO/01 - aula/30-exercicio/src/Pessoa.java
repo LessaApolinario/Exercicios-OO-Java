@@ -25,7 +25,7 @@ public class Pessoa {
     }
 
     public void setCpf(String cpf) {
-        if (!cpf.equals("") && cpf.length == 14) {
+        if (!cpf.equals("") && cpf.length() == 14) {
             this.cpf = cpf;
         }
     }

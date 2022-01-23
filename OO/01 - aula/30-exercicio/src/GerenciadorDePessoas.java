@@ -48,7 +48,7 @@ public class GerenciadorDePessoas {
 
     // Exibindo as informações dos alunos
     public void obterInformacoesAluno(Aluno aluno) {
-        String  alunoProcurado = buscarAluno(aluno.getCpf());
+        String alunoProcurado = buscarAluno(aluno.getCpf());
 
         System.out.println(alunoProcurado.toString());
     }

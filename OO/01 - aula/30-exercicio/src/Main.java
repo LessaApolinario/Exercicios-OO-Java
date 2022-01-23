@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Main {
 
+    static GerenciadorDePessoas gerenciadorDePessoas = new GerenciadorDePessoas();
+
     public static void main(String[] args) {
 
     }
@@ -30,7 +32,7 @@ public class Main {
         System.out.println("Qual é a nota 4 do novo aluno? ");
         double nota4 = in.nextDouble();
 
-        /// TODO: cadastrarAluno e passar os atributos
+        gerenciadorDePessoas.cadastrarAluno(nome, cpf, dataNascimento, nota1, nota2, nota3, nota4);
     }
 
     public static void abrirDialogoCadastrarProfessor() {
@@ -48,7 +50,7 @@ public class Main {
         System.out.println("Qual é o salário do novo professor? ");
         double salario = in.nextDouble();
 
-        /// TODO: cadastrarProfessor e passar os atributos
+        gerenciadorDePessoas.cadastrarProfessor(nome, cpf, dataNascimento, salario);
     }
 
     public static void menu() {

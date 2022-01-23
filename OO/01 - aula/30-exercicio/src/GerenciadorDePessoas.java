@@ -52,4 +52,22 @@ public class GerenciadorDePessoas {
 
         System.out.println(alunoProcurado.toString());
     }
+
+    // Buscando o professor
+    public String buscarProfessor(String cpf) {
+        for (Professor professor : professores) {
+            if (cpf.equals(professor.getCpf())) {
+                String professorEncontrado = professor.getCpf();
+                return professorEncontrado;
+            }
+        }
+
+        return "O professor não foi encontrado!";
+    }
+
+    public void obterInformacoesProfessor(Professor professor) {
+        String professorProcurado = buscarProfessor(professor.getCpf());
+
+        System.out.println(professorProcurado.toString());
+    }
 }

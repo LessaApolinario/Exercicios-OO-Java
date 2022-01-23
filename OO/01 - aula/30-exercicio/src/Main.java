@@ -61,4 +61,10 @@ public class Main {
         System.out.println("0. Sair");
         System.out.println("\n--------------------\n");
     }
+
+    public static void limparBuffer(Scanner sc) {
+        if (sc.hasNextLine()) {
+            sc.nextLine();
+        }
+    }
 }

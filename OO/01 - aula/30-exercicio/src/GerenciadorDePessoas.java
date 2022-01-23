@@ -46,8 +46,8 @@ public class GerenciadorDePessoas {
     }
 
     // Exibindo as informações dos alunos
-    public void obterInformacoesAluno(Aluno aluno) {
-        Aluno alunoProcurado = buscarAluno(aluno.getCpf());
+    public void obterInformacoesAluno(String cpf) {
+        Aluno alunoProcurado = buscarAluno(cpf);
 
         System.out.println(alunoProcurado.toString());
     }
@@ -63,8 +63,8 @@ public class GerenciadorDePessoas {
         return null;
     }
 
-    public void obterInformacoesProfessor(Professor professor) {
-        Professor professorProcurado = buscarProfessor(professor.getCpf());
+    public void obterInformacoesProfessor(String cpf) {
+        Professor professorProcurado = buscarProfessor(cpf);
 
         System.out.println(professorProcurado.toString());
     }

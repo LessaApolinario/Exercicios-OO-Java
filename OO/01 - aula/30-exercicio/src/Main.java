@@ -5,7 +5,47 @@ public class Main {
     static GerenciadorDePessoas gerenciadorDePessoas = new GerenciadorDePessoas();
 
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
 
+        int op = -1;
+
+        do {
+            Main.menu();
+            System.out.println("Escolha uma opção: ");
+            op = in.nextInt();
+            limparBuffer(in);
+
+            switch (op) {
+                case 1:
+                    abrirDialogoCadastrarAluno();
+                    break;
+                case 2:
+                    abrirDialogoCadastrarProfessor();
+                    break;
+                case 3:
+                    System.out.println("Qual é o CPF do aluno? ");
+                    String cpf = in.nextLine();
+
+                    Aluno alunoEncontrado = gerenciadorDePessoas.buscarAluno(cpf);
+
+                    Professor p = new Professor("João", "123.456.789-01", "01/01/1970", 2000);
+                    System.out.println(p.obterMediaAluno(alunoEncontrado));
+                    break;
+                case 4:
+                    System.out.println("Qual é o CPF do aluno? ");
+                    cpf = in.nextLine();
+
+                    gerenciadorDePessoas.obterInformacoesAluno(cpf);
+                    break;
+                case 5:
+                    System.out.println("Qual é o cpf do professor? ");
+                    cpf = in.nextLine();
+
+                    gerenciadorDePessoas.obterInformacoesProfessor(cpf);
+                    break;
+            }
+
+        } while (op != 0);
     }
 
     public static void abrirDialogoCadastrarAluno() {

@@ -4,7 +4,7 @@ public class GerenciadorDeClientes {
 
     private ArrayList<Cliente> clientes;
 
-    public GerenciadorDeClientes(ArrayList<Cliente> clientes) {
+    public GerenciadorDeClientes() {
         this.clientes = new ArrayList<>();
     }
 

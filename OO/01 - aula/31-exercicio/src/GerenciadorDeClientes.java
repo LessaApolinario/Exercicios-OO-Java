@@ -4,6 +4,10 @@ public class GerenciadorDeClientes {
 
     private ArrayList<Cliente> clientes;
 
+    public GerenciadorDeClientes(ArrayList<Cliente> clientes) {
+        this.clientes = new ArrayList<>();
+    }
+
     public Cliente buscarCliente(String cpf) {
         for (Cliente c : clientes) {
             String cpfProcurado = c.getCpf();

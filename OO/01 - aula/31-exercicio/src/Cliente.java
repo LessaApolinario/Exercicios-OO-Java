@@ -15,8 +15,13 @@ public class Cliente {
             this.cpf = cpf;
         }
 
-        this.contaCorrente = contaCorrente;
-        this.contaPoupanca = contaPoupanca;
+        if (contaCorrente != null) {
+            this.contaCorrente = contaCorrente;
+        }
+
+        if (contaPoupanca != null) {
+            this.contaPoupanca = contaPoupanca;
+        }
     }
 
     public String getNome() {

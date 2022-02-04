@@ -7,32 +7,15 @@ public class Cliente extends Pessoa {
             ContaPoupanca contaPoupanca) {
         super(nome, cpf, dataNascimento);
 
-        if (contaCorrente != null) {
-            this.contaCorrente = contaCorrente;
-        }
-
-        if (contaPoupanca != null) {
-            this.contaPoupanca = contaPoupanca;
-        }
+        this.contaCorrente = contaCorrente;
+        this.contaPoupanca = contaPoupanca;
     }
 
     public ContaCorrente getContaCorrente() {
         return contaCorrente;
     }
 
-    public void setContaCorrente(ContaCorrente contaCorrente) {
-        if (contaCorrente != null) {
-            this.contaCorrente = contaCorrente;
-        }
-    }
-
     public ContaPoupanca getContaPoupanca() {
         return contaPoupanca;
-    }
-
-    public void setContaPoupanca(ContaPoupanca contaPoupanca) {
-        if (contaPoupanca != null) {
-            this.contaPoupanca = contaPoupanca;
-        }
     }
 }

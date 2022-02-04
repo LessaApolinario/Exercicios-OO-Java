@@ -33,6 +33,7 @@ public class ContaCorrente extends Conta {
             saldoAtual += quantia;
 
             System.out.println("Depósito realizado com sucesso!");
+            return saldoAtual;
         }
 
         System.out.println("A quantia deve ser maior que zero e o saldo positivo!");

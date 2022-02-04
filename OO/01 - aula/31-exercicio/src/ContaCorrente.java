@@ -25,4 +25,17 @@ public class ContaCorrente extends Conta {
         System.out.println("Quantia muito alta, impossível sacar!");
         return -1;
     }
+
+    public double depositar(double quantia, Cliente c) {
+        double saldoAtual = c.getContaCorrente().getSaldo();
+
+        if ((saldoAtual > 0) && (quantia > 0)) {
+            saldoAtual += quantia;
+
+            System.out.println("Depósito realizado com sucesso!");
+        }
+
+        System.out.println("A quantia deve ser maior que zero e o saldo positivo!");
+        return -1;
+    }
 }

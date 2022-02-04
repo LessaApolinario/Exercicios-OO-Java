@@ -58,7 +58,7 @@ public class Main {
         gerenciadorDeClientes.cadastrarCliente(nome, cpf, dataNascimento, cc, cp);
     }
 
-    public static void abrirDialogoSacar() {
+    public static void abrirDialogoSacarContaCorrente() {
         Scanner in = new Scanner(System.in);
 
         // O cpf deve ter tamanho/length 14 e não pode ser vazio

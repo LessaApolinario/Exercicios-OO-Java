@@ -11,4 +11,18 @@ public class ContaCorrente extends Conta {
 
         return saldo;
     }
+
+    public double sacar(double quantia, Cliente c) {
+        double saldoAtual = c.getContaCorrente().getSaldo();
+
+        if (quantia <= saldoAtual) {
+            saldoAtual -= quantia;
+
+            System.out.println("Saque realizado com sucesso!");
+            return saldoAtual;
+        }
+
+        System.out.println("Quantia muito alta, impossível sacar!");
+        return -1;
+    }
 }

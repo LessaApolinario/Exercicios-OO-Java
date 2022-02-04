@@ -11,4 +11,30 @@ public class ContaPoupanca extends Conta {
 
         return saldo;
     }
+
+    public double sacar(double quantia, Cliente c) {
+        double saldoAtual = c.getContaCorrente().getSaldo();
+
+        if ((saldoAtual > 0) && (quantia <= saldoAtual)) {
+            saldoAtual -= quantia;
+
+            System.out.println("Saque realizado com sucesso!");
+            return saldoAtual;
+        }
+
+        return -1;
+    }
+
+    public double depositar(double quantia, Cliente c) {
+        double saldoAtual = c.getContaCorrente().getSaldo();
+
+        if ((saldoAtual > 0) && (quantia > 0)) {
+            saldoAtual += quantia;
+
+            System.out.println("Depósito realizado com sucesso!");
+            return saldoAtual;
+        }
+
+        return -1;
+    }
 }

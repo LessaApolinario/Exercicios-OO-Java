@@ -22,6 +22,7 @@ public class ContaPoupanca extends Conta {
             return saldoAtual;
         }
 
+        System.out.println("O saldo deve ser positivo e a quantia deve ser menor ou igual ao saldo!");
         return -1;
     }
 
@@ -35,6 +36,7 @@ public class ContaPoupanca extends Conta {
             return saldoAtual;
         }
 
+        System.out.println("A quantia deve ser maior que zero e o saldo positivo!");
         return -1;
     }
 }

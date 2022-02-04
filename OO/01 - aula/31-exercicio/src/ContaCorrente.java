@@ -22,7 +22,7 @@ public class ContaCorrente extends Conta {
             return saldoAtual;
         }
 
-        System.out.println("O saldo deve ser positivo e a quantia deve ser menor que o saldo!");
+        System.out.println("O saldo deve ser positivo e a quantia deve ser menor ou igual ao saldo!");
         return -1;
     }
 

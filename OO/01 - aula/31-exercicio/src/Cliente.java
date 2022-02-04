@@ -1,14 +1,38 @@
-public class Cliente extends Pessoa {
+public class Cliente {
 
+    private String nome;
+    private String cpf;
     private ContaCorrente contaCorrente;
     private ContaPoupanca contaPoupanca;
 
-    public Cliente(String nome, String cpf, String dataNascimento, ContaCorrente contaCorrente,
+    public Cliente(String nome, String cpf, ContaCorrente contaCorrente,
             ContaPoupanca contaPoupanca) {
-        super(nome, cpf, dataNascimento);
+        if (!nome.equals("")) {
+            this.nome = nome;
+        }
+
+        if (!cpf.equals("") && cpf.length() == 14) {
+            this.cpf = cpf;
+        }
 
         this.contaCorrente = contaCorrente;
         this.contaPoupanca = contaPoupanca;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public ContaCorrente getContaCorrente() {

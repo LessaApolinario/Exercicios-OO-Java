@@ -20,9 +20,9 @@ public class GerenciadorDeClientes {
         return null;
     }
 
-    public void cadastrarCliente(String nome, String cpf, String dataNascimento, ContaCorrente contaCorrente,
+    public void cadastrarCliente(String nome, String cpf, ContaCorrente contaCorrente,
             ContaPoupanca contaPoupanca) {
-        Cliente cliente = new Cliente(nome, cpf, dataNascimento, contaCorrente, contaPoupanca);
+        Cliente cliente = new Cliente(nome, cpf, contaCorrente, contaPoupanca);
 
         clientes.add(cliente);
         System.out.println("Cliente cadastrado com sucesso!");

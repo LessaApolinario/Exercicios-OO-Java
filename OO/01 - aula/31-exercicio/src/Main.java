@@ -45,9 +45,6 @@ public class Main {
         System.out.println("Qual é o cpf do cliente? ");
         String cpf = in.nextLine();
 
-        System.out.println("Qual é a data de nascimento do cliente? ");
-        String dataNascimento = in.nextLine();
-
         // Abrindo a conta corrente
         System.out.println("Qual é o número da conta corrente? ");
         int numeroConta = in.nextInt();
@@ -81,7 +78,7 @@ public class Main {
         ContaPoupanca cp = gerenciadorDeContas.abrirContaPoupanca(numeroContaPoupanca, taxaContaPoupanca,
                 saldoContaPoupanca, bancoContaPoupanca);
 
-        gerenciadorDeClientes.cadastrarCliente(nome, cpf, dataNascimento, cc, cp);
+        gerenciadorDeClientes.cadastrarCliente(nome, cpf, cc, cp);
     }
 
     public static void abrirDialogoSacarContaCorrente() {

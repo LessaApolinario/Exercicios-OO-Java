@@ -13,7 +13,7 @@ public class ContaPoupanca extends Conta {
     }
 
     public double sacar(double quantia, Cliente c) {
-        double saldoAtual = c.getContaCorrente().getSaldo();
+        double saldoAtual = c.getContaPoupanca().getSaldo();
 
         if ((saldoAtual > 0) && (quantia <= saldoAtual)) {
             saldoAtual -= quantia;
@@ -26,7 +26,7 @@ public class ContaPoupanca extends Conta {
     }
 
     public double depositar(double quantia, Cliente c) {
-        double saldoAtual = c.getContaCorrente().getSaldo();
+        double saldoAtual = c.getContaPoupanca().getSaldo();
 
         if ((saldoAtual > 0) && (quantia > 0)) {
             saldoAtual += quantia;

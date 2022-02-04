@@ -6,7 +6,34 @@ public class Main {
     static GerenciadorDeContas gerenciadorDeContas = new GerenciadorDeContas();
 
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
 
+        int op = -1;
+
+        do {
+            menu();
+            System.out.println("Escolha uma opção: ");
+            op = in.nextInt();
+            limparBuffer(in);
+
+            switch (op) {
+                case 1:
+                    abrirDialogoCadastrarCliente();
+                    break;
+                case 2:
+                    abrirDialogoSacarContaCorrente();
+                    break;
+                case 3:
+                    abrirDialogoSacarContaPoupanca();
+                    break;
+                case 4:
+                    abrirDialogoDepositarContaCorrente();
+                    break;
+                case 5:
+                    abrirDialogoDepositarContaPoupanca();
+                    break;
+            }
+        } while (op != 0);
     }
 
     public static void abrirDialogoCadastrarCliente() {
@@ -78,6 +105,7 @@ public class Main {
             ContaCorrente contaCorrenteCliente = clienteProcurado.getContaCorrente();
             double saque = contaCorrenteCliente.sacar(quantiaSaque, clienteProcurado);
             contaCorrenteCliente.setSaldo(saque);
+            System.out.println("Saldo atual (conta corrente) : " + contaCorrenteCliente.getSaldo());
         }
     }
 
@@ -99,6 +127,7 @@ public class Main {
             double saque = contaPoupancaCliente.sacar(quantiaSaque, clienteProcurado);
             // atualizando o saldo da conta poupança do cliente
             contaPoupancaCliente.setSaldo(saque);
+            System.out.println("Saldo atual (conta poupança): " + contaPoupancaCliente.getSaldo());
         }
     }
 
@@ -117,6 +146,7 @@ public class Main {
             ContaCorrente contaCorrenteCliente = clienteProcurado.getContaCorrente();
             double deposito = contaCorrenteCliente.depositar(quantiaDeposito, clienteProcurado);
             contaCorrenteCliente.setSaldo(deposito);
+            System.out.println("Saldo atual (conta corrente) : " + contaCorrenteCliente.getSaldo());
         }
     }
 
@@ -135,7 +165,17 @@ public class Main {
             ContaPoupanca contaPoupancaCliente = clienteProcurado.getContaPoupanca();
             double deposito = contaPoupancaCliente.depositar(quantiaDeposito, clienteProcurado);
             contaPoupancaCliente.setSaldo(deposito);
+            System.out.println("Saldo atual (conta poupança): " + contaPoupancaCliente.getSaldo());
         }
+    }
+
+    public static void menu() {
+        System.out.println("1. Cadastrar Cliente (Incluindo Conta corrente e Poupança)");
+        System.out.println("2. Saque da conta corrente (Procurar pelo CPF do Cliente)");
+        System.out.println("3. Saque da poupança (Procurar pelo CPF do Cliente)");
+        System.out.println("4. Depósito da conta corrente (Procurar pelo CPF do Cliente)");
+        System.out.println("5. Depósito da poupança (Procurar pelo CPF do Cliente)");
+        System.out.println("0. Sair");
     }
 
     public static void limparBuffer(Scanner sc) {

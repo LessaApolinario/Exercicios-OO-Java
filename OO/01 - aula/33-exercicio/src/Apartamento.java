@@ -21,4 +21,33 @@ public class Apartamento extends Imovel {
         }
     }
 
+    @Override
+    public String toString() {
+        String mensagem = "";
+        mensagem += "\n--------------------\n";
+        mensagem += "Rua: " + super.getRua() + "\n";
+        mensagem += "Número: " + super.getNumero() + "\n";
+        mensagem += "Bairro: " + super.getBairro() + "\n";
+        mensagem += "Cidade: " + super.getCidade() + "\n";
+        mensagem += "Estado: " + super.getEstado() + "\n";
+        mensagem += "Cep: " + super.getCep() + "\n";
+
+        if (super.isEstaAlugado()) {
+            mensagem += "Está alugado\n";
+        } else {
+            mensagem += "Não está alugado\n";
+        }
+
+        if (super.isEstaMobiliado()) {
+            mensagem += "Está mobiliado\n";
+        } else {
+            mensagem += "Não está mobiliado\n";
+        }
+
+        mensagem += "Nome do prédio: " + this.getNomePredio() + "\n";
+        mensagem += "\n--------------------\n";
+
+        return mensagem;
+    }
+
 }

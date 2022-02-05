@@ -115,4 +115,32 @@ public class Imovel {
     public void setEstaMobiliado(boolean estaMobiliado) {
         this.estaMobiliado = estaMobiliado;
     }
+
+    @Override
+    public String toString() {
+        String mensagem = "";
+        mensagem += "\n--------------------\n";
+        mensagem += "Rua: " + getRua() + "\n";
+        mensagem += "Número: " + getNumero() + "\n";
+        mensagem += "Bairro: " + getBairro() + "\n";
+        mensagem += "Cidade: " + getCidade() + "\n";
+        mensagem += "Estado: " + getEstado() + "\n";
+        mensagem += "Cep: " + getCep() + "\n";
+
+        if (isEstaAlugado()) {
+            mensagem += "Está alugado\n";
+        } else {
+            mensagem += "Não está alugado\n";
+        }
+
+        if (isEstaMobiliado()) {
+            mensagem += "Está mobiliado\n";
+        } else {
+            mensagem += "Não está mobiliado\n";
+        }
+
+        mensagem += "\n--------------------\n";
+
+        return mensagem;
+    }
 }

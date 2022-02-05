@@ -6,7 +6,7 @@ public class Main {
     static GerenciadorDeImoveis gerenciadorDeImoveis = new GerenciadorDeImoveis();
 
     public static void main(String[] args) {
-
+        Scanner in = new Scanner(System.in);
     }
 
     public static void abrirDialogoRegistrarCasa() {
@@ -99,5 +99,13 @@ public class Main {
                 System.out.println(imovel.toString());
             }
         }
+    }
+
+    public static void menu() {
+        System.out.println("1. Registrar Casa");
+        System.out.println("2. Registrar Apartamento");
+        System.out.println("3. Listar Imóveis não alugados (pelo nome da rua)");
+        System.out.println("4. Listar todos os Imóveis mobiliados");
+        System.out.println("0. Sair");
     }
 }

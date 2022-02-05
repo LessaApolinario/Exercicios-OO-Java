@@ -1,12 +1,18 @@
 public abstract class Conta {
 
+    /// TODO: add password to Conta
     private Cliente cliente;
+    private String senha;
     private int numeroConta;
     private double taxa;
     private double saldo;
     private String banco;
 
-    public Conta(int numeroConta, double taxa, double saldo, String banco) {
+    public Conta(String senha, int numeroConta, double taxa, double saldo, String banco) {
+        if (!senha.equals("")) {
+            this.senha = senha;
+        }
+
         if (numeroConta > 0) {
             this.numeroConta = numeroConta;
         }
@@ -21,6 +27,16 @@ public abstract class Conta {
 
         if (!banco.equals("")) {
             this.banco = banco;
+        }
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        if (!senha.equals("")) {
+            this.senha = senha;
         }
     }
 
@@ -63,9 +79,9 @@ public abstract class Conta {
             this.banco = banco;
         }
     }
-    
-    public double sacar(double quantia, Cliente c) {
-        double saldoAtual = c.getContaCorrente().getSaldo();
+
+    public double sacar(double quantia) {
+        double saldoAtual = this.getSaldo();
 
         if (saldoAtual > 0 && (quantia <= saldoAtual)) {
             saldoAtual -= quantia;
@@ -78,8 +94,8 @@ public abstract class Conta {
         return -1;
     }
 
-    public double depositar(double quantia, Cliente c) {
-        double saldoAtual = c.getContaCorrente().getSaldo();
+    public double depositar(double quantia) {
+        double saldoAtual = this.getSaldo();
 
         if ((saldoAtual > 0) && (quantia > 0)) {
             saldoAtual += quantia;

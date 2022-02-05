@@ -1,7 +1,7 @@
 public class ContaPoupanca extends Conta {
 
-    public ContaPoupanca(int numeroConta, double taxa, double saldo, String banco) {
-        super(numeroConta, taxa, saldo, banco);
+    public ContaPoupanca(String senha, int numeroConta, double taxa, double saldo, String banco) {
+        super(senha, numeroConta, taxa, saldo, banco);
     }
 
     // Adiciona uma quantia ao saldo, que por sua vez é uma porcentagem!

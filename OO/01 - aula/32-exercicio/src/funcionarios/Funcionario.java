@@ -64,4 +64,11 @@ public class Funcionario {
             this.dataNascimento = dataNascimento;
         }
     }
+
+    @Override
+    public String toString() {
+        return "\n--------------------\n" + "Informações do funcionário: \n" + "Nome: " + getNome() + "\n" + "CPF: "
+                + getCpf() + "\n" + "Salário: " + getSalario() + "\n" + "Data de nascimento: " + getDataNascimento()
+                + "\n--------------------\n";
+    }
 }

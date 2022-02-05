@@ -2,12 +2,10 @@ import java.util.ArrayList;
 
 public class GerenciadorDeImoveis {
 
-    private ArrayList<Casa> casas;
-    private ArrayList<Apartamento> apartamentos;
+    private ArrayList<Imovel> imoveis;
 
     public GerenciadorDeImoveis() {
-        this.casas = new ArrayList<>();
-        this.apartamentos = new ArrayList<>();
+        this.imoveis = new ArrayList<>();
     }
 
     public Casa registrarCasa(String rua, String numero, String bairro, String cidade, String estado, String cep,
@@ -15,7 +13,7 @@ public class GerenciadorDeImoveis {
             boolean estaMobiliado) {
         Casa c = new Casa(rua, numero, bairro, cidade, estado, cep, estaAlugado, estaMobiliado);
 
-        casas.add(c);
+        imoveis.add(c);
 
         System.out.println("Casa registrada com sucesso!");
 
@@ -28,7 +26,7 @@ public class GerenciadorDeImoveis {
         Apartamento ap = new Apartamento(rua, numero, bairro, cidade, estado, cep, estaAlugado, estaMobiliado,
                 nomePredio);
 
-        apartamentos.add(ap);
+        imoveis.add(ap);
 
         System.out.println("Aspartamento registrado com sucesso!");
 

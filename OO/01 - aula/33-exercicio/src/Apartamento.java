@@ -49,5 +49,4 @@ public class Apartamento extends Imovel {
 
         return mensagem;
     }
-
 }

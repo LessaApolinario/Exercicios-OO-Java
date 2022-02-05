@@ -1,5 +1,6 @@
-public class Conta {
+public abstract class Conta {
 
+    private Cliente cliente;
     private int numeroConta;
     private double taxa;
     private double saldo;
@@ -61,5 +62,33 @@ public class Conta {
         if (!banco.equals("")) {
             this.banco = banco;
         }
+    }
+    
+    public double sacar(double quantia, Cliente c) {
+        double saldoAtual = c.getContaCorrente().getSaldo();
+
+        if (saldoAtual > 0 && (quantia <= saldoAtual)) {
+            saldoAtual -= quantia;
+
+            System.out.println("Saque realizado com sucesso!");
+            return saldoAtual;
+        }
+
+        System.out.println("O saldo deve ser positivo e a quantia deve ser menor ou igual ao saldo!");
+        return -1;
+    }
+
+    public double depositar(double quantia, Cliente c) {
+        double saldoAtual = c.getContaCorrente().getSaldo();
+
+        if ((saldoAtual > 0) && (quantia > 0)) {
+            saldoAtual += quantia;
+
+            System.out.println("Depósito realizado com sucesso!");
+            return saldoAtual;
+        }
+
+        System.out.println("A quantia deve ser maior que zero e o saldo positivo!");
+        return -1;
     }
 }

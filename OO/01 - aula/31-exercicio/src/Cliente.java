@@ -2,11 +2,8 @@ public class Cliente {
 
     private String nome;
     private String cpf;
-    private ContaCorrente contaCorrente;
-    private ContaPoupanca contaPoupanca;
 
-    public Cliente(String nome, String cpf, ContaCorrente contaCorrente,
-            ContaPoupanca contaPoupanca) {
+    public Cliente(String nome, String cpf) {
         if (!nome.equals("")) {
             this.nome = nome;
         }
@@ -39,12 +36,24 @@ public class Cliente {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-
-    public ContaCorrente getContaCorrente() {
-        return contaCorrente;
+/*
+    public void addContaPoupanca(ContaPoupanca conta) {
+        contas.add(conta)
     }
 
-    public ContaPoupanca getContaPoupanca() {
-        return contaPoupanca;
+    public void addContaCorrente(ContaCorrente conta) {
+        contas.add(conta)
     }
+
+    public ArrayList<ContaPoupanca> getContasPoupancas () {
+        ArrayList <ContaPoupanca> contasPoupanca = new ArrayList<>();
+
+        for (Conta conta : contas) {
+            if (conta instanceof ContaPoupanca) {
+                contasPoupanca.add(conta)
+            }
+        }
+
+        return contasPoupanca
+    }*/
 }

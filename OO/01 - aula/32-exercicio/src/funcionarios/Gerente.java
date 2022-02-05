@@ -7,9 +7,7 @@ public class Gerente extends Funcionario {
     }
 
     public double calcularSalario() {
-        double salario = super.getSalario();
-        salario += 2000;
-
+        double salario = super.getSalario() + 2000;
         return salario;
     }
 }

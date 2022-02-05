@@ -1,5 +1,3 @@
-package funcionarios;
-
 public class Funcionario {
 
     private String nome;

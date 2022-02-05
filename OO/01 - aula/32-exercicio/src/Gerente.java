@@ -1,5 +1,3 @@
-package funcionarios;
-
 public class Gerente extends Funcionario {
 
     public Gerente(String nome, String cpf, double salario, String dataNascimento) {

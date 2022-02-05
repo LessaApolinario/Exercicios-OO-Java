@@ -1,9 +1,4 @@
-package gerenciadores;
-
 import java.util.ArrayList;
-
-import funcionarios.Funcionario;
-import funcionarios.Gerente;
 
 public class GerenciadorDeFuncionarios {
 

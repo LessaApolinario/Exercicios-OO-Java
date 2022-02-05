@@ -10,6 +10,20 @@ public class GerenciadorDeFuncionarios {
     private ArrayList<Funcionario> funcionarios;
     private ArrayList<Gerente> gerentes;
 
+
+    public GerenciadorDeFuncionarios() {
+        this.funcionarios = new ArrayList<>();
+        this.gerentes = new ArrayList<>();
+    }
+
+    public ArrayList<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public ArrayList<Gerente> getGerentes() {
+        return gerentes;
+    }
+
     public Funcionario adicionarFuncionario(String nome, String cpf, double salario, String dataNascimento) {
         Funcionario f = new Funcionario(nome, cpf, salario, dataNascimento);
 

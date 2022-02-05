@@ -43,6 +43,44 @@ public class Main {
         gerenciadorDeImoveis.registrarCasa(rua, numero, bairro, cidade, estado, cep, estaAlugado, estaMobiliado);
     }
 
+    public static void abrirDialogoRegistrarApartamento() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Qual é o nome da rua do apartamento? ");
+        String rua = in.nextLine();
+
+        System.out.println("Qual é o número do apartamento? ");
+        String numero = in.nextLine();
+
+        System.out.println("Qual é o bairro do apartamento? ");
+        String bairro = in.nextLine();
+
+        System.out.println("Qual é a cidade do apartamento? ");
+        String cidade = in.nextLine();
+
+        System.out.println("Qual é o estado do apartamento? ");
+        String estado = in.nextLine();
+
+        System.out.println("Qual é o cep da rua do apartamento? ");
+        String cep = in.nextLine();
+
+        System.out.println("O apartamento está alugada? ");
+        String respostaAlugado = in.nextLine();
+
+        boolean estaAlugado = respostaAlugado.equals("Sim") || respostaAlugado.equals("sim") ? true : false;
+
+        System.out.println("O apartamento está mobiliado? ");
+        String respostaMobiliada = in.nextLine();
+
+        boolean estaMobiliado = respostaMobiliada.equals("Sim") || respostaMobiliada.equals("sim") ? true : false;
+
+        System.out.println("Qual é o nome do prédio do apartamento? ");
+        String nomePredio = in.nextLine();
+
+        gerenciadorDeImoveis.registrarApartamento(rua, numero, bairro, cidade, estado, cep, estaAlugado, estaMobiliado,
+                nomePredio);
+    }
+
     public static void listarNaoAlugados(ArrayList<Imovel> imoveis) {
         for (Imovel imovel : imoveis) {
             boolean alugado = imovel.isEstaAlugado();

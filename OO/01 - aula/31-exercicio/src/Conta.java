@@ -1,6 +1,5 @@
 public abstract class Conta {
 
-    /// TODO: add password to Conta
     private Cliente cliente;
     private String senha;
     private int numeroConta;
@@ -28,6 +27,14 @@ public abstract class Conta {
         if (!banco.equals("")) {
             this.banco = banco;
         }
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public String getSenha() {

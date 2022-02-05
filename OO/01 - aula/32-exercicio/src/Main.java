@@ -44,6 +44,7 @@ public class Main {
 
         System.out.println("Qual é o salário do funcionário? ");
         double salario = in.nextDouble();
+        limparBuffer(in);
 
         System.out.println("Qual é a data de nascimento do funcionário? ");
         String dataNascimento = in.nextLine();
@@ -62,6 +63,7 @@ public class Main {
 
         System.out.println("Qual é o salário do gerente? ");
         double salario = in.nextDouble();
+        limparBuffer(in);
 
         System.out.println("Qual é a data de nascimento do gerente? ");
         String dataNascimento = in.nextLine();

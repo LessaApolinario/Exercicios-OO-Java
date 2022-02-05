@@ -8,6 +8,10 @@ public class GerenciadorDeImoveis {
         this.imoveis = new ArrayList<>();
     }
 
+    public ArrayList<Imovel> getImoveis() {
+        return imoveis;
+    }
+
     public Casa registrarCasa(String rua, String numero, String bairro, String cidade, String estado, String cep,
             boolean estaAlugado,
             boolean estaMobiliado) {

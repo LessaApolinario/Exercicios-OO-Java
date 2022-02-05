@@ -7,6 +7,30 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+
+        int op = -1;
+
+        do {
+            menu();
+            System.out.println("Escolha uma opção: ");
+            op = in.nextInt();
+            limparBuffer(in);
+
+            switch (op) {
+                case 1:
+                    abrirDialogoRegistrarCasa();
+                    break;
+                case 2:
+                    abrirDialogoRegistrarApartamento();
+                    break;
+                case 3:
+                    listarNaoAlugados(gerenciadorDeImoveis.getImoveis());
+                    break;
+                case 4:
+                    listarMobiliados(gerenciadorDeImoveis.getImoveis());
+            }
+
+        } while (op != 0);
     }
 
     public static void abrirDialogoRegistrarCasa() {
@@ -107,5 +131,11 @@ public class Main {
         System.out.println("3. Listar Imóveis não alugados (pelo nome da rua)");
         System.out.println("4. Listar todos os Imóveis mobiliados");
         System.out.println("0. Sair");
+    }
+
+    public static void limparBuffer(Scanner sc) {
+        if (sc.hasNextLine()) {
+            sc.nextLine();
+        }
     }
 }

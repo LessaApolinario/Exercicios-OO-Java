@@ -48,7 +48,20 @@ public class Main {
 
         gerenciadorDeClientes.cadastrarCliente(nome, cpf);
 
-        /// TODO: implementar escolha de tipo de conta
+        System.out.println("Qual é o tipo de conta? (CC ou CP)? ");
+        String tipoDeConta = in.nextLine();
+
+        Cliente clienteCadastrado = gerenciadorDeClientes.cadastrarCliente(nome, cpf);
+
+        if (clienteCadastrado != null) {
+            ArrayList<Conta> contas = gerenciadorDeContas.getContas();
+
+            if (tipoDeConta.equals("CC")) {
+                abrirDialogoAbrirContaCorrente(clienteCadastrado, contas);
+            } else if (tipoDeConta.equals("CP")) {
+                abrirDialogoAbrirContaPoupanca(clienteCadastrado, contas);
+            }
+        }
     }
 
     public static void abrirDialogoAbrirContaCorrente(Cliente c, ArrayList<Conta> contas) {

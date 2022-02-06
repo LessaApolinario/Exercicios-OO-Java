@@ -17,21 +17,22 @@ public class Main {
             op = in.nextInt();
             limparBuffer(in);
 
+            /// TODO: Refactor this menu
             switch (op) {
                 case 1:
                     abrirDialogoCadastrarCliente();
                     break;
                 case 2:
-                    abrirDialogoSacarContaCorrente();
+                    // abrirDialogoSacarContaCorrente();
                     break;
                 case 3:
-                    abrirDialogoSacarContaPoupanca();
+                    // abrirDialogoSacarContaPoupanca();
                     break;
                 case 4:
-                    abrirDialogoDepositarContaCorrente();
+                    // abrirDialogoDepositarContaCorrente();
                     break;
                 case 5:
-                    abrirDialogoDepositarContaPoupanca();
+                    // abrirDialogoDepositarContaPoupanca();
                     break;
             }
         } while (op != 0);
@@ -109,99 +110,101 @@ public class Main {
         ContaPoupanca conta = gerenciadorDeContas.abrirContaPoupanca(senha, numeroConta, taxa, saldo, banco);
         c.addContaPoupanca(conta, contas);
     }
+    /// TODO: Refactor this code
 
-    public static void abrirDialogoSacarContaCorrente() {
-        Scanner in = new Scanner(System.in);
+    // public static void abrirDialogoSacarContaCorrente() {
+    //     Scanner in = new Scanner(System.in);
 
-        // O cpf deve ter tamanho/length 14 e não pode ser vazio
-        System.out.println("Qual é o cpf do cliente? ");
-        String cpf = in.nextLine();
+    //     // O cpf deve ter tamanho/length 14 e não pode ser vazio
+    //     System.out.println("Qual é o cpf do cliente? ");
+    //     String cpf = in.nextLine();
 
-        Cliente clienteProcurado = gerenciadorDeClientes.buscarCliente(cpf);
+    //     Cliente clienteProcurado = gerenciadorDeClientes.buscarCliente(cpf);
 
-        if (clienteProcurado != null) {
-            System.out.println("Qual é a quantia a ser sacada? ");
-            double quantiaSaque = in.nextDouble();
+    //     if (clienteProcurado != null) {
+    //         System.out.println("Qual é a quantia a ser sacada? ");
+    //         double quantiaSaque = in.nextDouble();
 
-            /**
-             * O método sacar está na classe ContaCorrente,
-             * que por sua vez pode ser uma conta de um determinado cliente,
-             * logo podemos procurá-la através da busca de um cliente.
-             */
-            ContaCorrente contaCorrenteCliente = clienteProcurado.getContaCorrente();
-            double saque = contaCorrenteCliente.sacar(quantiaSaque, clienteProcurado);
-            contaCorrenteCliente.setSaldo(saque);
-            System.out.println("Saldo atual (conta corrente) : " + contaCorrenteCliente.getSaldo());
-        }
-    }
+    //         /**
+    //          * O método sacar está na classe ContaCorrente,
+    //          * que por sua vez pode ser uma conta de um determinado cliente,
+    //          * logo podemos procurá-la através da busca de um cliente.
+    //          */
+    //         ContaCorrente contaCorrenteCliente = clienteProcurado.getContaCorrente();
+    //         double saque = contaCorrenteCliente.sacar(quantiaSaque, clienteProcurado);
+    //         contaCorrenteCliente.setSaldo(saque);
+    //         System.out.println("Saldo atual (conta corrente) : " + contaCorrenteCliente.getSaldo());
+    //     }
+    // }
 
-    public static void abrirDialogoSacarContaPoupanca() {
-        Scanner in = new Scanner(System.in);
+    // public static void abrirDialogoSacarContaPoupanca() {
+    //     Scanner in = new Scanner(System.in);
 
-        System.out.println("Qual é o cpf do cliente? ");
-        String cpf = in.nextLine();
+    //     System.out.println("Qual é o cpf do cliente? ");
+    //     String cpf = in.nextLine();
 
-        Cliente clienteProcurado = gerenciadorDeClientes.buscarCliente(cpf);
+    //     Cliente clienteProcurado = gerenciadorDeClientes.buscarCliente(cpf);
 
-        if (clienteProcurado != null) {
-            System.out.println("Qual é a quantia a ser sacada? ");
-            double quantiaSaque = in.nextDouble();
+    //     if (clienteProcurado != null) {
+    //         System.out.println("Qual é a quantia a ser sacada? ");
+    //         double quantiaSaque = in.nextDouble();
 
-            // Recebendo a conta do cliente
-            ContaPoupanca contaPoupancaCliente = clienteProcurado.getContaPoupanca();
-            // realizando o depósito
-            double saque = contaPoupancaCliente.sacar(quantiaSaque, clienteProcurado);
-            // atualizando o saldo da conta poupança do cliente
-            contaPoupancaCliente.setSaldo(saque);
-            System.out.println("Saldo atual (conta poupança): " + contaPoupancaCliente.getSaldo());
-        }
-    }
+    //         // Recebendo a conta do cliente
+    //         ContaPoupanca contaPoupancaCliente = clienteProcurado.getContaPoupanca();
+    //         // realizando o depósito
+    //         double saque = contaPoupancaCliente.sacar(quantiaSaque, clienteProcurado);
+    //         // atualizando o saldo da conta poupança do cliente
+    //         contaPoupancaCliente.setSaldo(saque);
+    //         System.out.println("Saldo atual (conta poupança): " + contaPoupancaCliente.getSaldo());
+    //     }
+    // }
 
-    public static void abrirDialogoDepositarContaCorrente() {
-        Scanner in = new Scanner(System.in);
+    // public static void abrirDialogoDepositarContaCorrente() {
+    //     Scanner in = new Scanner(System.in);
 
-        System.out.println("Qual é o cpf do cliente? ");
-        String cpf = in.nextLine();
+    //     System.out.println("Qual é o cpf do cliente? ");
+    //     String cpf = in.nextLine();
 
-        Cliente clienteProcurado = gerenciadorDeClientes.buscarCliente(cpf);
+    //     Cliente clienteProcurado = gerenciadorDeClientes.buscarCliente(cpf);
 
-        if (clienteProcurado != null) {
-            System.out.println("Qual é a quantia a ser depositada?");
-            double quantiaDeposito = in.nextDouble();
+    //     if (clienteProcurado != null) {
+    //         System.out.println("Qual é a quantia a ser depositada?");
+    //         double quantiaDeposito = in.nextDouble();
 
-            ContaCorrente contaCorrenteCliente = clienteProcurado.getContaCorrente();
-            double deposito = contaCorrenteCliente.depositar(quantiaDeposito, clienteProcurado);
-            contaCorrenteCliente.setSaldo(deposito);
-            System.out.println("Saldo atual (conta corrente) : " + contaCorrenteCliente.getSaldo());
-        }
-    }
+    //         ContaCorrente contaCorrenteCliente = clienteProcurado.getContaCorrente();
+    //         double deposito = contaCorrenteCliente.depositar(quantiaDeposito, clienteProcurado);
+    //         contaCorrenteCliente.setSaldo(deposito);
+    //         System.out.println("Saldo atual (conta corrente) : " + contaCorrenteCliente.getSaldo());
+    //     }
+    // }
 
-    public static void abrirDialogoDepositarContaPoupanca() {
-        Scanner in = new Scanner(System.in);
+    // public static void abrirDialogoDepositarContaPoupanca() {
+    //     Scanner in = new Scanner(System.in);
 
-        System.out.println("Qual é o cpf do cliente? ");
-        String cpf = in.nextLine();
+    //     System.out.println("Qual é o cpf do cliente? ");
+    //     String cpf = in.nextLine();
 
-        Cliente clienteProcurado = gerenciadorDeClientes.buscarCliente(cpf);
+    //     Cliente clienteProcurado = gerenciadorDeClientes.buscarCliente(cpf);
 
-        if (clienteProcurado != null) {
-            System.out.println("Qual é a quantia a ser depositada? ");
-            double quantiaDeposito = in.nextDouble();
+    //     if (clienteProcurado != null) {
+    //         System.out.println("Qual é a quantia a ser depositada? ");
+    //         double quantiaDeposito = in.nextDouble();
 
-            ContaPoupanca contaPoupancaCliente = clienteProcurado.getContaPoupanca();
-            double deposito = contaPoupancaCliente.depositar(quantiaDeposito, clienteProcurado);
-            contaPoupancaCliente.setSaldo(deposito);
-            System.out.println("Saldo atual (conta poupança): " + contaPoupancaCliente.getSaldo());
-        }
-    }
+    //         ContaPoupanca contaPoupancaCliente = clienteProcurado.getContaPoupanca();
+    //         double deposito = contaPoupancaCliente.depositar(quantiaDeposito, clienteProcurado);
+    //         contaPoupancaCliente.setSaldo(deposito);
+    //         System.out.println("Saldo atual (conta poupança): " + contaPoupancaCliente.getSaldo());
+    //     }
+    // }
 
     public static void menu() {
-        System.out.println("1. Cadastrar Cliente (Incluindo Conta corrente e Poupança)");
-        System.out.println("2. Saque da conta corrente (Procurar pelo CPF do Cliente)");
-        System.out.println("3. Saque da poupança (Procurar pelo CPF do Cliente)");
-        System.out.println("4. Depósito da conta corrente (Procurar pelo CPF do Cliente)");
-        System.out.println("5. Depósito da poupança (Procurar pelo CPF do Cliente)");
+        System.out.println("1. Cadastrar Cliente (Incluindo Conta corrente ou Poupança)");
         System.out.println("0. Sair");
+    }
+
+    public static void submenu() {
+        System.out.println("1. Saque");
+        System.out.println("2. Depósito");
     }
 
     public static void limparBuffer(Scanner sc) {

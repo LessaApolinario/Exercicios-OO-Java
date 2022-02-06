@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Cliente {
 
     private String nome;
@@ -26,26 +28,27 @@ public class Cliente {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
     /// TODO: implement these methodss
-    /*
-     * public void addContaPoupanca(ContaPoupanca conta) {
-     * contas.add(conta)
-     * }
-     *
-     * public void addContaCorrente(ContaCorrente conta) {
-     * contas.add(conta)
-     * }
-     *
-     * public ArrayList<ContaPoupanca> getContasPoupancas () {
-     * ArrayList <ContaPoupanca> contasPoupanca = new ArrayList<>();
-     *
-     * for (Conta conta : contas) {
-     * if (conta instanceof ContaPoupanca) {
-     * contasPoupanca.add(conta)
-     * }
-     * }
-     *
-     * return contasPoupanca
-     * }
-     */
+
+    public void addContaPoupanca(ContaPoupanca conta, ArrayList<Conta> contas) {
+        contas.add(conta);
+    }
+
+    public void addContaCorrente(ContaCorrente conta, ArrayList<Conta> contas) {
+        contas.add(conta);
+    }
+
+    public ArrayList<ContaPoupanca> getContasPoupanca(ArrayList<Conta> contas) {
+        ArrayList<ContaPoupanca> contasPoupanca = new ArrayList<>();
+
+        for (Conta conta : contas) {
+            if (conta instanceof ContaPoupanca) {
+                /// BUG: Conta cannot resolve for a ContaPoupanca type
+                contasPoupanca.add(conta);
+            }
+        }
+
+        return contasPoupanca;
+    }
 }

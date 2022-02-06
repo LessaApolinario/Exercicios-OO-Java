@@ -33,10 +33,6 @@ public abstract class Conta {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
     public String getSenha() {
         return senha;
     }

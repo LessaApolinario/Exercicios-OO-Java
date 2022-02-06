@@ -39,8 +39,8 @@ public class Cliente {
         contas.add(conta);
     }
 
-    public ArrayList<ContaPoupanca> getContasPoupanca(ArrayList<Conta> contas) {
-        ArrayList<ContaPoupanca> contasPoupanca = new ArrayList<>();
+    public ArrayList<Conta> getContasPoupanca(ArrayList<Conta> contas) {
+        ArrayList<Conta> contasPoupanca = new ArrayList<>();
 
         for (Conta conta : contas) {
             if (conta instanceof ContaPoupanca) {

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -45,7 +46,14 @@ public class Main {
         System.out.println("Qual é o cpf do cliente? ");
         String cpf = in.nextLine();
 
-        // Abrindo a conta corrente
+        gerenciadorDeClientes.cadastrarCliente(nome, cpf);
+
+        /// TODO: implementar escolha de tipo de conta
+    }
+
+    public static void abrirDialogoAbrirContaCorrente(Cliente c, ArrayList<Conta> contas) {
+        Scanner in = new Scanner(System.in);
+
         System.out.println("Qual é o número da conta corrente? ");
         int numeroConta = in.nextInt();
 
@@ -59,26 +67,34 @@ public class Main {
         System.out.println("Qual é o nome do banco da conta corrente? ");
         String banco = in.nextLine();
 
-        ContaCorrente cc = gerenciadorDeContas.abrirContaCorrente(numeroConta, taxa, saldo, banco);
+        System.out.println("Qual é a senha da conta corrente? ");
+        String senha = in.nextLine();
 
-        // Abrindo a conta poupança
+        ContaCorrente conta = gerenciadorDeContas.abrirContaCorrente(senha, numeroConta, taxa, saldo, banco);
+        c.addContaCorrente(conta, contas); // Adicionando a conta do cliente
+    }
+
+    public static void abrirDialogoAbrirContaPoupanca(Cliente c, ArrayList<Conta> contas) {
+        Scanner in = new Scanner(System.in);
+
         System.out.println("Qual é o número da conta poupança? ");
-        int numeroContaPoupanca = in.nextInt();
+        int numeroConta = in.nextInt();
 
         System.out.println("Qual é a taxa da conta poupança? ");
-        double taxaContaPoupanca = in.nextDouble();
+        double taxa = in.nextDouble();
 
         System.out.println("Qual é o saldo da conta poupança? ");
-        double saldoContaPoupanca = in.nextDouble();
+        double saldo = in.nextDouble();
         limparBuffer(in);
 
         System.out.println("Qual é o nome do banco da conta poupança? ");
-        String bancoContaPoupanca = in.nextLine();
+        String banco = in.nextLine();
 
-        ContaPoupanca cp = gerenciadorDeContas.abrirContaPoupanca(numeroContaPoupanca, taxaContaPoupanca,
-                saldoContaPoupanca, bancoContaPoupanca);
+        System.out.println("Qual é a senha da conta poupança? ");
+        String senha = in.nextLine();
 
-        gerenciadorDeClientes.cadastrarCliente(nome, cpf, cc, cp);
+        ContaPoupanca conta = gerenciadorDeContas.abrirContaPoupanca(senha, numeroConta, taxa, saldo, banco);
+        c.addContaPoupanca(conta, contas);
     }
 
     public static void abrirDialogoSacarContaCorrente() {

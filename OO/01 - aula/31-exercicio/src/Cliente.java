@@ -51,4 +51,16 @@ public class Cliente {
 
         return contasPoupanca;
     }
+
+    public ArrayList<Conta> getContasCorrente(ArrayList<Conta> contas) {
+        ArrayList<Conta> contasCorrente = new ArrayList<>();
+
+        for (Conta conta : contas) {
+            if (conta instanceof ContaCorrente) {
+                contasCorrente.add(conta);
+            }
+        }
+
+        return contasCorrente;
+    }
 }

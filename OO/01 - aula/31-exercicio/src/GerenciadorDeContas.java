@@ -46,4 +46,16 @@ public class GerenciadorDeContas {
 
         return false;
     }
+
+    public Conta buscarConta(Cliente cliente) {
+        for (Conta conta : contas) {
+            Cliente clienteProcurado = conta.getCliente();
+
+            if (cliente.equals(clienteProcurado)) {
+                return conta;
+            }
+        }
+
+        return null;
+    }
 }

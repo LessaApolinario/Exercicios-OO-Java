@@ -15,4 +15,10 @@ public class Gerente extends Funcionario {
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
+
+    @Override
+    public void setSalario(double salario) {
+        double novoSalario = salario + 1500;
+        super.setSalario(novoSalario);
+    }
 }

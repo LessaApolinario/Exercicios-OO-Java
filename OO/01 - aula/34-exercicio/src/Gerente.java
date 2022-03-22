@@ -6,6 +6,7 @@ public class Gerente extends Funcionario {
             double salario, String departamento) {
         super(nome, cpf, dataNascimento, salario);
         this.departamento = departamento;
+        this.bonus();
     }
 
     public String getDepartamento() {
@@ -16,9 +17,9 @@ public class Gerente extends Funcionario {
         this.departamento = departamento;
     }
 
-    @Override
-    public void setSalario(double salario) {
-        double novoSalario = salario + 1500;
-        super.setSalario(novoSalario);
+    public void bonus() {
+        double salario = super.getSalario();
+        salario += 1500;
+        super.setSalario(salario);
     }
 }

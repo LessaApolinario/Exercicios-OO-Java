@@ -70,6 +70,7 @@ public class Main {
 
         System.out.println("Salário: ");
         double salario = in.nextDouble();
+        limparBuffer(in);
 
         System.out.println("Departamento: ");
         String departamento = in.nextLine();

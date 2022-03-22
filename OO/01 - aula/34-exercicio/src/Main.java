@@ -69,4 +69,15 @@ public class Main {
 
         gerenciadorDeGerentes.obterSalarioGerente(cpf);
     }
+
+    public static void menu() {
+        System.out.println("##############################");
+        System.out.println("1. Adicionar Funcionário");
+        System.out.println("2. Adicionar Gerente");
+        System.out.println("3. Obter salário de Funcionário");
+        System.out.println("4. Obter salário Gerente");
+        System.out.println("0. Sair");
+        System.out.println("##############################");
+        System.out.println(">");
+    }
 }

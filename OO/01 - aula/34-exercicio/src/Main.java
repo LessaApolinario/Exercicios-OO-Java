@@ -6,7 +6,7 @@ public class Main {
     static GerenciadorDeGerentes gerenciadorDeGerentes = new GerenciadorDeGerentes();
 
     public static void main(String[] args) {
-
+        abrirDialogObterSalarioFuncionario();
     }
 
     public static void abrirDialogCadastarFuncionario() {
@@ -50,5 +50,14 @@ public class Main {
 
         gerenciadorDeGerentes.cadastrarGerente(nome, cpf, dataNascimento, salario, departamento);
         System.out.println("Gerente cadastrado com sucesso!");
+    }
+
+    public static void abrirDialogObterSalarioFuncionario() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Qual é o cpf do funcionário? ");
+        String cpf = in.nextLine();
+
+        gerenciadorDeFuncionarios.obterSalarioFuncionario(cpf);
     }
 }

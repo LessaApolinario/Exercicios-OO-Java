@@ -26,4 +26,16 @@ public class GerenciadorDeGerentes {
 
         return g;
     }
+
+    public void obterSalarioGerente(String cpf) {
+        try {
+            Funcionario funcionarioProcurado = this.buscarGerente(cpf);
+            double salarioGerente = funcionarioProcurado.getSalario();
+            System.out.println("O salário do funcionário " +
+                    funcionarioProcurado.getNome() + " é " + salarioGerente);
+        } catch (NullPointerException error) {
+            System.out.println(error.getMessage());
+            System.out.println("O gerente não foi encontrado!");
+        }
+    }
 }

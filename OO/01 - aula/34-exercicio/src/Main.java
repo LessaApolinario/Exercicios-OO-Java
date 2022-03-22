@@ -60,4 +60,13 @@ public class Main {
 
         gerenciadorDeFuncionarios.obterSalarioFuncionario(cpf);
     }
+
+    public static void abrirDialogObterSalarioGerente() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Qual é o cpf do gerente? ");
+        String cpf = in.nextLine();
+
+        gerenciadorDeGerentes.obterSalarioGerente(cpf);
+    }
 }

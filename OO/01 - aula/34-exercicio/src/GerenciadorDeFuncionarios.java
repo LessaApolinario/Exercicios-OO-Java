@@ -23,7 +23,7 @@ public class GerenciadorDeFuncionarios {
     public Funcionario cadastrarFuncionario(String nome, String cpf,
             String dataNascimento, double salario) {
         Funcionario f = new Funcionario(nome, cpf, dataNascimento, salario);
-
+        funcionarios.add(f);
         return f;
     }
 

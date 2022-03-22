@@ -23,7 +23,7 @@ public class GerenciadorDeGerentes {
     public Gerente cadastrarGerente(String nome, String cpf,
             String dataNascimento, double salario, String departamento) {
         Gerente g = new Gerente(nome, cpf, dataNascimento, salario, departamento);
-
+        gerentes.add(g);
         return g;
     }
 

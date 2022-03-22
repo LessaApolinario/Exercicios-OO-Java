@@ -6,7 +6,33 @@ public class Main {
     static GerenciadorDeGerentes gerenciadorDeGerentes = new GerenciadorDeGerentes();
 
     public static void main(String[] args) {
-        abrirDialogObterSalarioFuncionario();
+        Scanner in = new Scanner(System.in);
+        int op = -1;
+
+        do {
+            menu();
+            op = in.nextInt();
+            limparBuffer(in);
+
+            switch (op) {
+                case 1:
+                    abrirDialogCadastarFuncionario();
+                    break;
+                case 2:
+                    abrirDialogCadastarGerente();
+                    break;
+                case 3:
+                    abrirDialogObterSalarioFuncionario();
+                    break;
+                case 4:
+                    abrirDialogObterSalarioGerente();
+                    break;
+                case 0:
+                    System.out.println("Você saiu!");
+                    break;
+            }
+
+        } while (op != 0);
     }
 
     public static void abrirDialogCadastarFuncionario() {
@@ -79,5 +105,11 @@ public class Main {
         System.out.println("0. Sair");
         System.out.println("##############################");
         System.out.println(">");
+    }
+
+    public static void limparBuffer(Scanner sc) {
+        if (sc.hasNextLine()) {
+            sc.nextLine();
+        }
     }
 }

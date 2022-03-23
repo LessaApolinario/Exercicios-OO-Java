@@ -6,10 +6,7 @@ public class Cliente {
     private String cpf;
 
     public Cliente(String nome, String cpf) {
-        if (!nome.equals("")) {
-            this.nome = nome;
-        }
-
+        this.nome = nome;
         this.cpf = cpf;
     }
 

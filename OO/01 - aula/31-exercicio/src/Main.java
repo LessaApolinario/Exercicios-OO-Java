@@ -110,6 +110,7 @@ public class Main {
         ContaPoupanca conta = gerenciadorDeContas.abrirContaPoupanca(senha, numeroConta, taxa, saldo, banco);
         c.addContaPoupanca(conta, contas);
     }
+
     /// TODO: Refactor sacar and depositar
     public static void abrirDialogoSacar() {
         Scanner in = new Scanner(System.in);
@@ -123,7 +124,6 @@ public class Main {
             System.out.println("Digite a senha da sua conta: ");
             String senha = in.nextLine();
 
-
             Conta contaValida = gerenciadorDeContas.buscarConta(cliente);
             boolean eSenhaValida = gerenciadorDeContas.validarSenhaContaCliente(senha, contaValida);
 
@@ -131,7 +131,13 @@ public class Main {
                 System.out.println("Qual é a quantia a ser sacada? ");
                 double quantia = in.nextDouble();
 
-                contaValida.sacar(quantia);
+                try {
+                    contaValida.sacar(quantia);
+                } catch (SaldoInsuficienteException error) {
+                    System.out.println(error.getMessage());
+                } catch (QuantiaIndisponivelException error) {
+                    System.out.println(error.getMessage());
+                }
             }
         }
     }

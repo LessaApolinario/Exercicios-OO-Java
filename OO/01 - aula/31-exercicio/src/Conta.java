@@ -83,31 +83,39 @@ public abstract class Conta {
         }
     }
 
-    public double sacar(double quantia) {
+    public double sacar(double quantia) throws SaldoInsuficienteException,
+            QuantiaIndisponivelException {
         double saldoAtual = this.getSaldo();
 
-        if (saldoAtual > 0 && (quantia <= saldoAtual)) {
-            saldoAtual -= quantia;
-
-            System.out.println("Saque realizado com sucesso!");
-            return saldoAtual;
+        if (saldoAtual <= 0) {
+            throw new SaldoInsuficienteException("Saldo insuficiente para saque!");
         }
 
-        System.out.println("O saldo deve ser positivo e a quantia deve ser menor ou igual ao saldo!");
-        return -1;
+        if (quantia > saldoAtual) {
+            throw new QuantiaIndisponivelException("Quantidade indisponível para saque!");
+        }
+
+        saldoAtual -= quantia;
+        System.out.println("Saque realizado com sucesso!");
+
+        return saldoAtual;
     }
 
-    public double depositar(double quantia) {
+    public double depositar(double quantia) throws SaldoInsuficienteException,
+            QuantiaNegativaException {
         double saldoAtual = this.getSaldo();
 
-        if ((saldoAtual > 0) && (quantia > 0)) {
-            saldoAtual += quantia;
-
-            System.out.println("Depósito realizado com sucesso!");
-            return saldoAtual;
+        if (saldoAtual <= 0) {
+            throw new SaldoInsuficienteException("Saldo insuficiente para saque!");
         }
 
-        System.out.println("A quantia deve ser maior que zero e o saldo positivo!");
-        return -1;
+        if (quantia < 0) {
+            throw new QuantiaNegativaException("A quantidade a ser depositada não pode ser negativa...");
+        }
+
+        saldoAtual += quantia;
+
+        System.out.println("Depósito realizado com sucesso!");
+        return saldoAtual;
     }
 }

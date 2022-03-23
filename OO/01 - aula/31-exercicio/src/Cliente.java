@@ -29,8 +29,6 @@ public class Cliente {
         this.cpf = cpf;
     }
 
-    /// TODO: implement these methodss
-
     public void addContaPoupanca(ContaPoupanca conta, ArrayList<Conta> contas) {
         contas.add(conta);
     }

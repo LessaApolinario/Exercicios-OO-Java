@@ -50,18 +50,20 @@ public class Main {
         gerenciadorDeClientes.cadastrarCliente(nome, cpf);
 
         System.out.println("Qual é o tipo de conta? (CC ou CP)? ");
-        String tipoDeConta = in.nextLine();
+        String tipoConta = in.nextLine();
 
-        Cliente clienteCadastrado = gerenciadorDeClientes.cadastrarCliente(nome, cpf);
-
-        if (clienteCadastrado != null) {
+        try {
+            Cliente clienteCadastrado = gerenciadorDeClientes.cadastrarCliente(nome, cpf);
             ArrayList<Conta> contas = gerenciadorDeContas.getContas();
 
-            if (tipoDeConta.equals("CC")) {
+            if (tipoConta.equals("CC")) {
                 abrirDialogoAbrirContaCorrente(clienteCadastrado, contas);
-            } else if (tipoDeConta.equals("CP")) {
+            } else if (tipoConta.equals("CP")) {
                 abrirDialogoAbrirContaPoupanca(clienteCadastrado, contas);
             }
+        } catch (NullPointerException error) {
+            System.out.println(error.getMessage());
+            System.out.println("O o cliente não foi cadastrado!");
         }
     }
 
@@ -118,7 +120,6 @@ public class Main {
         System.out.println("Digite o seu cpf? ");
         String cpf = in.nextLine();
 
-
         try {
             Cliente cliente = gerenciadorDeClientes.buscarCliente(cpf);
 
@@ -134,9 +135,44 @@ public class Main {
 
                 try {
                     contaValida.sacar(quantia);
+                    System.out.println("Sacando...");
                 } catch (SaldoInsuficienteException error) {
                     System.out.println(error.getMessage());
                 } catch (QuantiaIndisponivelException error) {
+                    System.out.println(error.getMessage());
+                }
+            }
+        } catch (NullPointerException error) {
+            System.out.println(error.getMessage());
+            System.out.println("O cliente não foi encontrado!");
+        }
+    }
+
+    public static void abrirDialogoDepositar() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("cpf: ");
+        String cpf = in.nextLine();
+
+        try {
+            Cliente cliente = gerenciadorDeClientes.buscarCliente(cpf);
+
+            System.out.println("Senha: ");
+            String senha = in.nextLine();
+
+            Conta contaValida = gerenciadorDeContas.buscarConta(cliente);
+            boolean eSenhaValida = gerenciadorDeContas.validarSenhaContaCliente(senha, contaValida);
+
+            if (eSenhaValida) {
+                System.out.println("Quantia: ");
+                double quantia = in.nextDouble();
+
+                try {
+                    contaValida.depositar(quantia);
+                    System.out.println("Depositando...");
+                } catch (SaldoInsuficienteException error) {
+                    System.out.println(error.getMessage());
+                } catch (QuantiaNegativaException error) {
                     System.out.println(error.getMessage());
                 }
             }

@@ -39,7 +39,6 @@ public class Cliente {
 
         for (Conta conta : contas) {
             if (conta instanceof ContaPoupanca) {
-                /// BUG: Conta cannot resolve for a ContaPoupanca type
                 contasPoupanca.add(conta);
             }
         }

@@ -113,7 +113,6 @@ public class Main {
         c.addContaPoupanca(conta, contas);
     }
 
-    /// TODO: Refactor sacar and depositar
     public static void abrirDialogoSacar() {
         Scanner in = new Scanner(System.in);
 

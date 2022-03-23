@@ -17,22 +17,15 @@ public class Main {
             op = in.nextInt();
             limparBuffer(in);
 
-            /// TODO: Refactor this menu
             switch (op) {
                 case 1:
                     abrirDialogoCadastrarCliente();
                     break;
                 case 2:
-                    // abrirDialogoSacarContaCorrente();
+                    realizarLogin(op);
                     break;
-                case 3:
-                    // abrirDialogoSacarContaPoupanca();
-                    break;
-                case 4:
-                    // abrirDialogoDepositarContaCorrente();
-                    break;
-                case 5:
-                    // abrirDialogoDepositarContaPoupanca();
+                case 0:
+                    System.out.println("Você saiu!");
                     break;
             }
         } while (op != 0);
@@ -181,14 +174,55 @@ public class Main {
         }
     }
 
+    public static void realizarLogin(int op) {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("CPF: ");
+        String cpf = in.nextLine();
+
+        System.out.println("Senha: ");
+        String senha = in.nextLine();
+
+        try {
+            Cliente cliente = gerenciadorDeClientes.buscarCliente(cpf);
+            Conta conta = gerenciadorDeContas.buscarConta(cliente);
+            boolean autenticacaoCliente = gerenciadorDeContas.validarSenhaContaCliente(senha, conta);
+
+            if (autenticacaoCliente) {
+                do {
+                    menuConta();
+                    op = in.nextInt();
+                    limparBuffer(in);
+
+                    switch (op) {
+                        case 1:
+                            abrirDialogoSacar();
+                            break;
+                        case 2:
+                            abrirDialogoDepositar();
+                            break;
+                        case 0:
+                            System.out.println("Saindo da conta...");
+                            break;
+                    }
+                } while (op != 0);
+            }
+        } catch (NullPointerException error) {
+            System.out.println(error.getMessage());
+            System.out.println("O cliente não foi encontrado...");
+        }
+    }
+
     public static void menu() {
         System.out.println("1. Cadastrar Cliente (Incluindo Conta corrente ou Poupança)");
+        System.out.println("2. Realizar login");
         System.out.println("0. Sair");
     }
 
-    public static void submenu() {
+    public static void menuConta() {
         System.out.println("1. Saque");
         System.out.println("2. Depósito");
+        System.out.println("0. Sair");
     }
 
     public static void limparBuffer(Scanner sc) {

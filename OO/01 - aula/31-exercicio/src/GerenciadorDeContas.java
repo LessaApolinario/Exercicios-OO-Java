@@ -30,13 +30,6 @@ public class GerenciadorDeContas {
         return cp;
     }
 
-    /**
-     *
-     * @param senha - A senha que o cliente digitar.
-     * @param c     - A conta do cliente, que pode ser poupança ou corrente.
-     * @return - retorna false se a senha não existir e true se o cliente conseguir
-     *         acessar.
-     */
     public boolean validarSenhaContaCliente(String senha, Conta c) {
         String senhaCliente = c.getSenha();
 

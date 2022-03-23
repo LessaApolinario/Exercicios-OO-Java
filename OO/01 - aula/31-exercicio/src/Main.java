@@ -118,16 +118,17 @@ public class Main {
         System.out.println("Digite o seu cpf? ");
         String cpf = in.nextLine();
 
-        Cliente cliente = gerenciadorDeClientes.buscarCliente(cpf);
 
-        if (cliente != null) {
+        try {
+            Cliente cliente = gerenciadorDeClientes.buscarCliente(cpf);
+
             System.out.println("Digite a senha da sua conta: ");
             String senha = in.nextLine();
 
             Conta contaValida = gerenciadorDeContas.buscarConta(cliente);
             boolean eSenhaValida = gerenciadorDeContas.validarSenhaContaCliente(senha, contaValida);
 
-            if (contaValida != null && eSenhaValida == true) {
+            if (eSenhaValida) {
                 System.out.println("Qual é a quantia a ser sacada? ");
                 double quantia = in.nextDouble();
 
@@ -139,6 +140,9 @@ public class Main {
                     System.out.println(error.getMessage());
                 }
             }
+        } catch (NullPointerException error) {
+            System.out.println(error.getMessage());
+            System.out.println("O cliente não foi encontrado!");
         }
     }
 

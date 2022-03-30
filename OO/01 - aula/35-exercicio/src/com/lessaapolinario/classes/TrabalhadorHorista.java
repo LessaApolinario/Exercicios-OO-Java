@@ -26,4 +26,13 @@ public class TrabalhadorHorista extends Trabalhador {
     public void setSalarioHora(double salarioHora) {
         this.salarioHora = salarioHora;
     }
+
+    @Override
+    public double getSalario() {
+        /*
+            O salário do horista é igual ao total de horas trabalhadas
+            vezes o salário por hora.
+        */
+        return this.getTotalHorasTrabalhar() * this.getSalarioHora();
+    }
 }

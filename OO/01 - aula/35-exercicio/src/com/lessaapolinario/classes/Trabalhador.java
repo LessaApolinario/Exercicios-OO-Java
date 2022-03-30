@@ -1,6 +1,6 @@
 package com.lessaapolinario.classes;
 
-public class Trabalhador {
+public abstract class Trabalhador {
 
     private String nome;
     private String cadastro;

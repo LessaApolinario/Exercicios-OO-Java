@@ -97,6 +97,36 @@ public class Main {
         }
     }
 
+    public static void obterFichaTrabalhadorIntegral() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Cadastro?");
+        String cadastro = in.nextLine();
+
+        try {
+            Trabalhador trabalhadorIntegral = gereneciadorDeTrabalhadorIntegral.buscarTrabalhadorIntegral(cadastro);
+            System.out.println(trabalhadorIntegral.toString());
+        } catch (NullPointerException error) {
+            System.out.println(error.getMessage());
+            System.out.println("Trabalhador não encontrado!");
+        }
+    }
+
+    public static void obterFichaTrabalhadorHorista() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Cadastro?");
+        String cadastro = in.nextLine();
+
+        try {
+            Trabalhador trabalhadorHorista = gerenciadorDeTrabalhadorHorista.buscarTrabalhadorHorista(cadastro);
+            System.out.println(trabalhadorHorista.toString());
+        } catch (NullPointerException error) {
+            System.out.println(error.getMessage());
+            System.out.println("Trabalhador não encontrado!");
+        }
+    }
+
     public static void menu() {
         System.out.println("##############################");
         System.out.println("1 - Cadastrar trabalhador Integral");

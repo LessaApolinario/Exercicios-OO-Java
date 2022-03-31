@@ -1,7 +1,6 @@
 package com.lessaapolinario.managers;
 
 import com.lessaapolinario.classes.TrabalhadorHorista;
-import com.lessaapolinario.exceptions.TrabalhadorNaoEncontradoException;
 import com.lessaapolinario.interfaces.ManipulaTrabalhadorHorista;
 
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class GerenciadorDeTrabalhadorHorista implements ManipulaTrabalhadorHoris
     }
 
     @Override
-    public TrabalhadorHorista buscarTrabalhadorHorista(String cadastro) throws TrabalhadorNaoEncontradoException {
+    public TrabalhadorHorista buscarTrabalhadorHorista(String cadastro) {
         for (TrabalhadorHorista th : trabalhadores) {
             String cadastroHorista = th.getCadastro();
 

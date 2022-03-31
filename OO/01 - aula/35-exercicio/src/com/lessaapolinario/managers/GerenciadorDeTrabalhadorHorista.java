@@ -12,6 +12,10 @@ public class GerenciadorDeTrabalhadorHorista implements ManipulaTrabalhadorHoris
         this.trabalhadores = new ArrayList<>();
     }
 
+    public ArrayList<TrabalhadorHorista> getTrabalhadores() {
+        return trabalhadores;
+    }
+
     @Override
     public TrabalhadorHorista cadastrarTrabalhadorHorista(String nome, String cadastro, double salario, int idade, String endereco, int totalHorasTrabalhar, double salarioHora) {
         TrabalhadorHorista th = new TrabalhadorHorista(nome, cadastro, salario, idade, endereco, totalHorasTrabalhar, salarioHora);

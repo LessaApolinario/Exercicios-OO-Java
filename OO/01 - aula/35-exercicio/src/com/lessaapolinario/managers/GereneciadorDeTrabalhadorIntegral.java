@@ -12,6 +12,10 @@ public class GereneciadorDeTrabalhadorIntegral implements ManipulaTrabalhadorInt
         this.trabalhadores = new ArrayList<>();
     }
 
+    public ArrayList<TrabalhadorIntegral> getTrabalhadores() {
+        return trabalhadores;
+    }
+
     @Override
     public TrabalhadorIntegral cadastrarTrabalhadorIntegral(String nome, String cadastro, double salario, int idade, String endereco) {
         TrabalhadorIntegral ti = new TrabalhadorIntegral(nome, cadastro, salario, idade, endereco);

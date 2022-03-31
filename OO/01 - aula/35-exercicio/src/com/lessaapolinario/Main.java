@@ -1,9 +1,39 @@
 package com.lessaapolinario;
 
+import com.lessaapolinario.managers.GerenciadorDeTrabalhadorHorista;
+import com.lessaapolinario.managers.GereneciadorDeTrabalhadorIntegral;
+
+import java.util.Scanner;
+
 public class Main {
+
+    static GereneciadorDeTrabalhadorIntegral gereneciadorDeTrabalhadorIntegral = new GereneciadorDeTrabalhadorIntegral();
+    static GerenciadorDeTrabalhadorHorista gerenciadorDeTrabalhadorHorista = new GerenciadorDeTrabalhadorHorista();
 
     public static void main(String[] args) {
 
+    }
+
+    public static void abrirDialogoCadastrarTrabalhadorIntegral() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Nome?");
+        String nome = in.nextLine();
+
+        System.out.println("Cadastro?");
+        String cadastro = in.nextLine();
+
+        System.out.println("Salário?");
+        double salario = in.nextDouble();
+
+        System.out.println("Idade?");
+        int idade = in.nextInt();
+
+        System.out.println("Endereço?");
+        String endereco = in.nextLine();
+
+        gereneciadorDeTrabalhadorIntegral
+            .cadastrarTrabalhadorIntegral(nome, cadastro, salario, idade, endereco);
     }
 
     public static void menu() {

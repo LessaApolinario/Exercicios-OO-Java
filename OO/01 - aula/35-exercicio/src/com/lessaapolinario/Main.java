@@ -81,6 +81,22 @@ public class Main {
         }
     }
 
+    public static void obterSalarioTrabalhadorHorista() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Cadastro?");
+        String cadastro = in.nextLine();
+
+        try {
+            Trabalhador trabalhadorProcurado = gerenciadorDeTrabalhadorHorista.buscarTrabalhadorHorista(cadastro);
+            double salarioProcurado = trabalhadorProcurado.getSalario();
+            System.out.println("Salário do Horista: " + salarioProcurado);
+        } catch (NullPointerException error) {
+            System.out.println(error.getMessage());
+            System.out.println("Trabalhador não encontrado!");
+        }
+    }
+
     public static void menu() {
         System.out.println("##############################");
         System.out.println("1 - Cadastrar trabalhador Integral");

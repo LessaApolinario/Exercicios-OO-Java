@@ -12,7 +12,41 @@ public class Main {
     static GerenciadorDeTrabalhadorHorista gerenciadorDeTrabalhadorHorista = new GerenciadorDeTrabalhadorHorista();
 
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int op = -1;
 
+        do {
+            menu();
+            op = in.nextInt();
+            limparBuffer(in);
+
+            switch (op) {
+                case 1:
+                    abrirDialogoCadastrarTrabalhadorIntegral();
+                    break;
+                case 2:
+                    abrirDialogoCadastrarTrabalhadorHorista();
+                    break;
+                case 3:
+                    obterSalarioTrabalhadorIntegral();
+                    break;
+                case 4:
+                    obterSalarioTrabalhadorHorista();
+                    break;
+                case 5:
+                    obterFichaTrabalhadorIntegral();
+                    break;
+                case 6:
+                    obterFichaTrabalhadorHorista();
+                    break;
+                case 7:
+                    gerenciadorDeTrabalhadorIntegral.obterMaiorSalarioIntegrais();
+                    break;
+                case 8:
+                    gerenciadorDeTrabalhadorHorista.obterMaiorSalarioHoristas();
+                    break;
+            }
+        } while (op != 0);
     }
 
     public static void abrirDialogoCadastrarTrabalhadorIntegral() {

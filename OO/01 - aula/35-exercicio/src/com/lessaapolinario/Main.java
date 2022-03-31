@@ -36,6 +36,38 @@ public class Main {
             .cadastrarTrabalhadorIntegral(nome, cadastro, salario, idade, endereco);
     }
 
+    public static void abrirDialogoCadastrarTrabalhadorHorista() {
+        Scanner in = new Scanner(System.in);
+
+        /*
+        String nome, String cadastro, double salario, int idade,
+        String endereco, int totalHorasTrabalhar, double salarioHora
+        */
+        System.out.println("Nome?");
+        String nome = in.nextLine();
+
+        System.out.println("Cadastro?");
+        String cadastro = in.nextLine();
+
+        System.out.println("Salário?");
+        double salario = in.nextDouble();
+
+        System.out.println("Idade?");
+        int idade = in.nextInt();
+
+        System.out.println("Endereço?");
+        String endereco = in.nextLine();
+
+        System.out.println("Horas trabalhadas?");
+        int horasTrabalhadas = in.nextInt();
+
+        System.out.println("Salário por hora?");
+        double salarioHora = in.nextDouble();
+
+        gerenciadorDeTrabalhadorHorista
+            .cadastrarTrabalhadorHorista(nome, cadastro, salario, idade, endereco, horasTrabalhadas, salarioHora);
+    }
+
     public static void menu() {
         System.out.println("##############################");
         System.out.println("1 - Cadastrar trabalhador Integral");

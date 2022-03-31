@@ -2,21 +2,21 @@ package com.lessaapolinario.classes;
 
 public class TrabalhadorHorista extends Trabalhador {
 
-    private int totalHorasTrabalhar;
+    private int horasTrabalhadas;
     private double salarioHora;
 
-    public TrabalhadorHorista(String nome, String cadastro, double salario, int idade, String endereco, int totalHorasTrabalhar, double salarioHora) {
+    public TrabalhadorHorista(String nome, String cadastro, double salario, int idade, String endereco, int horasTrabalhadas, double salarioHora) {
         super(nome, cadastro, salario, idade, endereco);
-        this.totalHorasTrabalhar = totalHorasTrabalhar;
+        this.horasTrabalhadas = horasTrabalhadas;
         this.salarioHora = salarioHora;
     }
 
-    public int getTotalHorasTrabalhar() {
-        return totalHorasTrabalhar;
+    public int getHorasTrabalhadas() {
+        return horasTrabalhadas;
     }
 
-    public void setTotalHorasTrabalhar(int totalHorasTrabalhar) {
-        this.totalHorasTrabalhar = totalHorasTrabalhar;
+    public void setHorasTrabalhadas(int horasTrabalhadas) {
+        this.horasTrabalhadas = horasTrabalhadas;
     }
 
     public double getSalarioHora() {
@@ -33,7 +33,7 @@ public class TrabalhadorHorista extends Trabalhador {
             O salário do horista é igual ao total de horas trabalhadas
             vezes o salário por hora.
         */
-        return this.getTotalHorasTrabalhar() * this.getSalarioHora();
+        return this.getHorasTrabalhadas() * this.getSalarioHora();
     }
 
     @Override
@@ -44,7 +44,7 @@ public class TrabalhadorHorista extends Trabalhador {
             ", salario=" + this.getSalario() +
             ", idade=" + super.getIdade() +
             ", endereco='" + super.getEndereco() + '\'' +
-            ", totalHorasTrabalhar=" + this.totalHorasTrabalhar +
+            ", horasTrabalhadas=" + this.horasTrabalhadas +
             ", salarioHora=" + this.salarioHora +
             '}';
     }

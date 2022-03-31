@@ -17,8 +17,8 @@ public class GerenciadorDeTrabalhadorHorista implements ManipulaTrabalhadorHoris
     }
 
     @Override
-    public TrabalhadorHorista cadastrarTrabalhadorHorista(String nome, String cadastro, double salario, int idade, String endereco, int totalHorasTrabalhar, double salarioHora) {
-        TrabalhadorHorista th = new TrabalhadorHorista(nome, cadastro, salario, idade, endereco, totalHorasTrabalhar, salarioHora);
+    public TrabalhadorHorista cadastrarTrabalhadorHorista(String nome, String cadastro, double salario, int idade, String endereco, int horasTrabalhadas, double salarioHora) {
+        TrabalhadorHorista th = new TrabalhadorHorista(nome, cadastro, salario, idade, endereco, horasTrabalhadas, salarioHora);
         trabalhadores.add(th);
         return th;
     }

@@ -44,7 +44,7 @@ public class TrabalhadorHorista extends Trabalhador {
             ", salario=" + this.getSalario() +
             ", idade=" + super.getIdade() +
             ", endereco='" + super.getEndereco() + '\'' +
-            "totalHorasTrabalhar=" + this.totalHorasTrabalhar +
+            ", totalHorasTrabalhar=" + this.totalHorasTrabalhar +
             ", salarioHora=" + this.salarioHora +
             '}';
     }

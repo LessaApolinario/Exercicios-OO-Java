@@ -39,10 +39,6 @@ public class Main {
     public static void abrirDialogoCadastrarTrabalhadorHorista() {
         Scanner in = new Scanner(System.in);
 
-        /*
-        String nome, String cadastro, double salario, int idade,
-        String endereco, int totalHorasTrabalhar, double salarioHora
-        */
         System.out.println("Nome?");
         String nome = in.nextLine();
 

@@ -141,4 +141,10 @@ public class Main {
         System.out.println("##############################");
         System.out.println(">");
     }
+
+    public static void limparBuffer(Scanner sc) {
+        if (sc.hasNextLine()) {
+            sc.nextLine();
+        }
+    }
 }

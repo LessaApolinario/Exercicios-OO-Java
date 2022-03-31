@@ -2,13 +2,13 @@ package com.lessaapolinario;
 
 import com.lessaapolinario.classes.Trabalhador;
 import com.lessaapolinario.managers.GerenciadorDeTrabalhadorHorista;
-import com.lessaapolinario.managers.GereneciadorDeTrabalhadorIntegral;
+import com.lessaapolinario.managers.GerenciadorDeTrabalhadorIntegral;
 
 import java.util.Scanner;
 
 public class Main {
 
-    static GereneciadorDeTrabalhadorIntegral gereneciadorDeTrabalhadorIntegral = new GereneciadorDeTrabalhadorIntegral();
+    static GerenciadorDeTrabalhadorIntegral gerenciadorDeTrabalhadorIntegral = new GerenciadorDeTrabalhadorIntegral();
     static GerenciadorDeTrabalhadorHorista gerenciadorDeTrabalhadorHorista = new GerenciadorDeTrabalhadorHorista();
 
     public static void main(String[] args) {
@@ -33,7 +33,7 @@ public class Main {
         System.out.println("Endereço?");
         String endereco = in.nextLine();
 
-        gereneciadorDeTrabalhadorIntegral
+        gerenciadorDeTrabalhadorIntegral
             .cadastrarTrabalhadorIntegral(nome, cadastro, salario, idade, endereco);
     }
 
@@ -72,7 +72,7 @@ public class Main {
         String cadastro = in.nextLine();
 
         try {
-            Trabalhador trabalhadorProcurado = gereneciadorDeTrabalhadorIntegral.buscarTrabalhadorIntegral(cadastro);
+            Trabalhador trabalhadorProcurado = gerenciadorDeTrabalhadorIntegral.buscarTrabalhadorIntegral(cadastro);
             double salarioProcurado = trabalhadorProcurado.getSalario();
             System.out.println("Salário do Integral: " + salarioProcurado);
         } catch (NullPointerException error) {
@@ -104,7 +104,7 @@ public class Main {
         String cadastro = in.nextLine();
 
         try {
-            Trabalhador trabalhadorIntegral = gereneciadorDeTrabalhadorIntegral.buscarTrabalhadorIntegral(cadastro);
+            Trabalhador trabalhadorIntegral = gerenciadorDeTrabalhadorIntegral.buscarTrabalhadorIntegral(cadastro);
             System.out.println(trabalhadorIntegral.toString());
         } catch (NullPointerException error) {
             System.out.println(error.getMessage());

@@ -5,10 +5,10 @@ import com.lessaapolinario.interfaces.ManipulaTrabalhadorIntegral;
 
 import java.util.ArrayList;
 
-public class GereneciadorDeTrabalhadorIntegral implements ManipulaTrabalhadorIntegral {
+public class GerenciadorDeTrabalhadorIntegral implements ManipulaTrabalhadorIntegral {
     private ArrayList<TrabalhadorIntegral> trabalhadores;
 
-    public GereneciadorDeTrabalhadorIntegral() {
+    public GerenciadorDeTrabalhadorIntegral() {
         this.trabalhadores = new ArrayList<>();
     }
 

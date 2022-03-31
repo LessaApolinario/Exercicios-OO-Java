@@ -35,4 +35,17 @@ public class TrabalhadorHorista extends Trabalhador {
         */
         return this.getTotalHorasTrabalhar() * this.getSalarioHora();
     }
+
+    @Override
+    public String toString() {
+        return "TrabalhadorHorista{" +
+            "nome='" + super.getNome() + '\'' +
+            ", cadastro='" + super.getCadastro() + '\'' +
+            ", salario=" + this.getSalario() +
+            ", idade=" + super.getIdade() +
+            ", endereco='" + super.getEndereco() + '\'' +
+            "totalHorasTrabalhar=" + this.totalHorasTrabalhar +
+            ", salarioHora=" + this.salarioHora +
+            '}';
+    }
 }

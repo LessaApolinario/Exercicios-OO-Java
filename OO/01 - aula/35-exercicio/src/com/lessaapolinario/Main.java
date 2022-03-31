@@ -1,5 +1,6 @@
 package com.lessaapolinario;
 
+import com.lessaapolinario.classes.Trabalhador;
 import com.lessaapolinario.managers.GerenciadorDeTrabalhadorHorista;
 import com.lessaapolinario.managers.GereneciadorDeTrabalhadorIntegral;
 
@@ -62,6 +63,22 @@ public class Main {
 
         gerenciadorDeTrabalhadorHorista
             .cadastrarTrabalhadorHorista(nome, cadastro, salario, idade, endereco, horasTrabalhadas, salarioHora);
+    }
+
+    public static void obterSalarioTrabalhadorIntegral() {
+        Scanner in = new Scanner(System.in);
+
+        System.out.println("Cadastro?");
+        String cadastro = in.nextLine();
+
+        try {
+            Trabalhador trabalhadorProcurado = gereneciadorDeTrabalhadorIntegral.buscarTrabalhadorIntegral(cadastro);
+            double salarioProcurado = trabalhadorProcurado.getSalario();
+            System.out.println("Salário do Integral: " + salarioProcurado);
+        } catch (NullPointerException error) {
+            System.out.println(error.getMessage());
+            System.out.println("Trabalhador não encontrado!");
+        }
     }
 
     public static void menu() {

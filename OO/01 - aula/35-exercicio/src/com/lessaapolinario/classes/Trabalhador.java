@@ -55,4 +55,15 @@ public abstract class Trabalhador {
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
+
+    @Override
+    public String toString() {
+        return "Trabalhador{" +
+            "nome='" + nome + '\'' +
+            ", cadastro='" + cadastro + '\'' +
+            ", salario=" + salario +
+            ", idade=" + idade +
+            ", endereco='" + endereco + '\'' +
+            '}';
+    }
 }

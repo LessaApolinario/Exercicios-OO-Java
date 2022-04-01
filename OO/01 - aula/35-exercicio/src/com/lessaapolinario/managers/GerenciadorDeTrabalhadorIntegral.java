@@ -40,14 +40,12 @@ public class GerenciadorDeTrabalhadorIntegral implements ManipulaTrabalhadorInte
     public double obterMaiorSalarioIntegrais() {
         double maiorSalario = 0;
 
-        try {
-            maiorSalario = trabalhadores.get(0).getSalario();
-        } catch (ArrayIndexOutOfBoundsException error) {
-            System.out.println(error.getMessage());
-        }
-
         for (int i = 0; i < trabalhadores.size(); i++) {
             double salarioAtual = trabalhadores.get(i).getSalario();
+
+            if (i == 0) {
+                maiorSalario = salarioAtual;
+            }
 
             if (salarioAtual > maiorSalario) {
                 maiorSalario = salarioAtual;

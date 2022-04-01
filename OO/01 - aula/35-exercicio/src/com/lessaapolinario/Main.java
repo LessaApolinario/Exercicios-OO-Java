@@ -63,6 +63,7 @@ public class Main {
 
         System.out.println("Idade?");
         int idade = in.nextInt();
+        limparBuffer(in);
 
         System.out.println("Endereço?");
         String endereco = in.nextLine();
@@ -85,6 +86,7 @@ public class Main {
 
         System.out.println("Idade?");
         int idade = in.nextInt();
+        limparBuffer(in);
 
         System.out.println("Endereço?");
         String endereco = in.nextLine();

@@ -43,7 +43,7 @@ public class Main {
                     System.out.println(gerenciadorDeTrabalhadorIntegral.obterMaiorSalarioIntegrais());
                     break;
                 case 8:
-                    System.out.println(gerenciadorDeTrabalhadorHorista.obterMaiorSalarioHoristas());
+                    System.out.println(gerenciadorDeTrabalhadorHorista.obterMaiorIdadeHoristas());
                     break;
             }
         } while (op != 0);

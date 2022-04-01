@@ -8,5 +8,5 @@ public interface ManipulaTrabalhadorHorista {
 
     TrabalhadorHorista buscarTrabalhadorHorista(String cadastro);
 
-    double obterMaiorSalarioHoristas();
+    int obterMaiorIdadeHoristas();
 }

@@ -37,23 +37,21 @@ public class GerenciadorDeTrabalhadorHorista implements ManipulaTrabalhadorHoris
     }
 
     @Override
-    public double obterMaiorSalarioHoristas() {
-        double maiorSalario = 0;
-
-        try {
-            maiorSalario = trabalhadores.get(0).getSalario();
-        } catch (ArrayIndexOutOfBoundsException error) {
-            System.out.println(error.getMessage());
-        }
+    public int obterMaiorIdadeHoristas() {
+        int maiorIdade = 0;
 
         for (int i = 0; i < trabalhadores.size(); i++) {
-            double salarioAtual = trabalhadores.get(i).getSalario();
+            int idadeAtual = trabalhadores.get(i).getIdade();
 
-            if (salarioAtual > maiorSalario) {
-                maiorSalario = salarioAtual;
+            if (i == 0) {
+                maiorIdade = idadeAtual;
+            }
+
+            if (idadeAtual > maiorIdade) {
+                maiorIdade = idadeAtual;
             }
         }
 
-        return maiorSalario;
+        return maiorIdade;
     }
 }

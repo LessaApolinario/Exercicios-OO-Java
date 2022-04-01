@@ -40,10 +40,10 @@ public class Main {
                     obterFichaTrabalhadorHorista();
                     break;
                 case 7:
-                    gerenciadorDeTrabalhadorIntegral.obterMaiorSalarioIntegrais();
+                    System.out.println(gerenciadorDeTrabalhadorIntegral.obterMaiorSalarioIntegrais());
                     break;
                 case 8:
-                    gerenciadorDeTrabalhadorHorista.obterMaiorSalarioHoristas();
+                    System.out.println(gerenciadorDeTrabalhadorHorista.obterMaiorSalarioHoristas());
                     break;
             }
         } while (op != 0);
